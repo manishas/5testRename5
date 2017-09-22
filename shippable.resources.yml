@@ -4,4 +4,4 @@ resources:
     pointer:
       sourceName: amurphy/test
     seed:
-      versionName: latest
+      versionName: test
