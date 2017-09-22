@@ -1,7 +1,7 @@
 resources:
-  - name: image-resource-1
+  - name: image-resource-2
     type: image
     pointer:
       sourceName: amurphy/test
     seed:
-      versionName: latest
+      versionName: test
