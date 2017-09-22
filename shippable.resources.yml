@@ -6,7 +6,7 @@ resources:
     seed:
       versionName: test
 
-  - name: develop-git-repo-resource-with-script
+  - name: rename-repo
     type: gitRepo
     integration: github
     pointer:
