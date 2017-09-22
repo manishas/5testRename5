@@ -10,4 +10,4 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: "a-murphy/testrename"
+      sourceName: "a-murphy/testrename2"
