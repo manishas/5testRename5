@@ -5,3 +5,9 @@ resources:
       sourceName: amurphy/test
     seed:
       versionName: test
+
+  - name: develop-git-repo-resource-with-script
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: "a-murphy/testrename"
