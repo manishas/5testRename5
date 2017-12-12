@@ -11,3 +11,4 @@ resources:
     integration: github
     pointer:
       sourceName: "a-murphy/testrename"
+
