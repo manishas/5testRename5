@@ -5,8 +5,8 @@ os: CentOS_7
 
 build:
   pre_ci_boot:
-    imageName: drydock/u14pytall
-    imageTag: v5.10.3
+    image_name: drydock/u14pytall
+    image_tag: v5.10.3
   ci:
     - shipctl get_resource_version_key another-image versionName
     - echo $ANOTHERIMAGE_VERSIONNAME
