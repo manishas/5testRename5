@@ -2,3 +2,8 @@ language: none
 
 architecture: x86_64		
 os: CentOS_7
+
+build:
+  ci:
+    - shipctl get_resource_version_key another-image versionName
+    - echo $ANOTHERIMAGE_VERSIONNAME
