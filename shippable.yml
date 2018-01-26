@@ -14,6 +14,8 @@ build:
     image_name: drydock/u14pytall
     image_tag: v5.10.3
   ci:
+    - echo "$PHP_VERSION"
+    - echo "$BAR"
     - echo "RENAMEREPO5_POINTER_TEST $RENAMEREPO5_POINTER_TEST"
     - echo "RENAMEREPO5_POINTER_TEST2 $RENAMEREPO5_POINTER_TEST2"
     - echo "RENAMEREPO5_POINTER_TEST3 $RENAMEREPO5_POINTER_TEST3"
