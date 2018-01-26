@@ -3,6 +3,12 @@ language: none
 architecture: x86_64		
 os: Ubuntu_14.04
 
+env:
+  matrix:
+    - PHP_VERSION: 5.6
+      FOO: value
+      BAR: AFoo/Bar B/Foo/Bar
+
 build:
   pre_ci_boot:
     image_name: drydock/u14pytall
