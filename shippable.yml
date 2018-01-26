@@ -7,7 +7,7 @@ env:
   matrix:
     - PHP_VERSION: '5.6'
       FOO: value
-      BAR: 'AFoo/Bar B/Foo/Bar'
+      BAR: AFoo/Bar\ B/Foo/Bar
 
 build:
   pre_ci_boot:
