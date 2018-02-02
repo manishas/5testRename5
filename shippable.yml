@@ -29,7 +29,7 @@ integrations:
       type: webhook  
       payload:
         - testone=$BUILD_NUMBER
-      on_success: always
+      on_success: never
       on_failure: always
       on_cancel: always
       on_start: always
@@ -45,7 +45,7 @@ integrations:
       type: webhook  
       payload:
         - testthree=$BUILD_NUMBER
-      on_success: always
+      on_success: never
       on_failure: always
       on_cancel: always
       on_start: always
