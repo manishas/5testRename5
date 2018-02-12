@@ -4,10 +4,8 @@ architecture: x86_64
 os: Ubuntu_14.04
 
 env:
-  matrix:
-    - PHP_VERSION: '5.6'
-      FOO: value
-      BAR: '"AFoo/Bar B/Foo/Bar"'
+  - secure: j62zKkZ0GtF2SxJbjbRxhieHAfoCai+24SEbcJWHms2Jf1ooExCPdF2sMS21hHTrWBdHNnAHGaCQDbDFD7xwCajL8BAuzcNE8InOaFWd8J1hCqmuXi1eMYyhKGNkqqIK+uBdpkbVW63+tsQ+/z091SZvgFirbrjR2nhPaKpa9cvP6oZI5ve61tCJnQPjANOOGbj8EMPazAqK1BU2fyWa7h+P93AlvQ6YyxIrfqfI6J2fZJA+Z64ZsPZjFnoE3uQ7siv25BC0Kh3+W55G+vV4KHhaVHGXZLOZ5NegcA6xBzWvQxCl7gLQuecYOivZDu4yZbLS7PQGMgoSSLpD/7D5hQ== 
+  - PHP_VERSION: '5.6'
 
 build:
   pre_ci_boot:
