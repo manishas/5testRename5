@@ -4,7 +4,7 @@ architecture: x86_64
 os: Ubuntu_14.04
 
 env:
-  - secure: kaJS5qZyZ17KuNZACYt8iaP8Orrstr1j2nYAu7WzIPn2n0L/wN+0F1nFYYGdKkJziQbsNP7lEn/RfvSBQYTzT/ygWs31s7XReGT+9090BJBfDRDSU5tAcJvE6yGic4GmwQh7+aB+2EAGQ1XcxK2j5Y2WS0/ocziXFx5CtnlwyjOA9LnIMTIi6RXJx3Im8aYnq8degdf+KMM6u0qoGE0JBY8PXyOU8QgEvLKghn/eG+d9YD61ZbxGpuyuFmsl4EEGcLgVqqkDovZGIbDpqxYZBPrKxtOwQEOwc41FvyYiNXeRCKdRBL4PAEeH1NrnPzoyqZBhpxNmVZsE+0t+BkBgPw== 
+  #- secure: kaJS5qZyZ17KuNZACYt8iaP8Orrstr1j2nYAu7WzIPn2n0L/wN+0F1nFYYGdKkJziQbsNP7lEn/RfvSBQYTzT/ygWs31s7XReGT+9090BJBfDRDSU5tAcJvE6yGic4GmwQh7+aB+2EAGQ1XcxK2j5Y2WS0/ocziXFx5CtnlwyjOA9LnIMTIi6RXJx3Im8aYnq8degdf+KMM6u0qoGE0JBY8PXyOU8QgEvLKghn/eG+d9YD61ZbxGpuyuFmsl4EEGcLgVqqkDovZGIbDpqxYZBPrKxtOwQEOwc41FvyYiNXeRCKdRBL4PAEeH1NrnPzoyqZBhpxNmVZsE+0t+BkBgPw== 
   - PHP_VERSION: '5.6'
 
 build:
@@ -15,3 +15,4 @@ build:
     - echo "$PHP_VERSION"
     - echo "$user"
     - echo "$password"
+    - shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER
