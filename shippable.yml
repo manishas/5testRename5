@@ -9,9 +9,9 @@ env:
   - TWO: true
 
 build:
- # pre_ci_boot:
- #   image_name: library/centos
- #   image_tag: 6
+  pre_ci_boot:
+    image_name: amurphy/centos7none
+    image_tag: test
   ci:
     - echo "$PHP_VERSION"
     - echo "$user"
