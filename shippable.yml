@@ -10,8 +10,8 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: amurphy/test
-    image_tag: 2.18.18.installable
+    image_name: amurphy/centos7none
+    image_tag: test
     pull: true
   ci:
     - echo "$PHP_VERSION"
