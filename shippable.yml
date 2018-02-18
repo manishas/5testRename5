@@ -12,6 +12,7 @@ build:
   pre_ci_boot:
     image_name: amurphy/test
     image_tag: 2.18.18
+    pull: true
   ci:
     - echo "$PHP_VERSION"
     - echo "$user"
