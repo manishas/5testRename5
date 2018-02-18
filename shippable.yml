@@ -10,8 +10,8 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14pytall
-    image_tag: v5.10.3
+    image_name: library/centos
+    image_tag: latest
   ci:
     - echo "$PHP_VERSION"
     - echo "$user"
