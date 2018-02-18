@@ -11,7 +11,7 @@ env:
 build:
   pre_ci_boot:
     image_name: amurphy/test
-    image_tag: 2.18.18
+    image_tag: 2.18.18.installable
     pull: true
   ci:
     - echo "$PHP_VERSION"
