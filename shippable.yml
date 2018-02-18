@@ -11,7 +11,7 @@ env:
 build:
   pre_ci_boot:
     image_name: library/centos
-    image_tag: latest
+    image_tag: 6
   ci:
     - echo "$PHP_VERSION"
     - echo "$user"
