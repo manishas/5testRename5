@@ -23,3 +23,5 @@ integrations:
   notifications:
     - name: webhookIntegration1
       type: webhook
+      payload:
+        - test=$BRANCH
