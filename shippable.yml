@@ -21,7 +21,7 @@ build:
 
 integrations:
   notifications:
-    - integrationName: webhookIntegration1
+    - integrationName: webhookintegration1
       type: webhook
       payload:
         - test=$BRANCH
