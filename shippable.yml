@@ -12,6 +12,7 @@ build:
   pre_ci_boot:
     image_name: amurphy/test
     image_tag: newimage
+    options: '-e RUN_MODE=dev'
   ci:
     - openssl version
     - ssh-agent
