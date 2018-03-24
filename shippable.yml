@@ -14,7 +14,7 @@ build:
     image_tag: newimage
   ci:
     - openssl version
-    - ssh-agent version
+    - ssh-agent
     - echo "$PHP_VERSION"
     - echo "$user"
     - echo "$password"
