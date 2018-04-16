@@ -10,9 +10,9 @@ build:
     - docker images
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
 
-#integrations:
- # notifications:
- #   - integrationName: webhookintegration1
- #     type: webhook
- #     payload:
- #       - test=$BRANCH
+integrations:
+  notifications:
+    - integrationName: webhookintegration1
+      type: webhook
+      payload:
+        - test=$BRANCH
