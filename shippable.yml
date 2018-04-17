@@ -6,6 +6,8 @@ env:
 #  - TWO: true
 
 build:
+  pre_ci:
+    - echo "testing"
   pre_ci_boot:
     options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
   ci:
