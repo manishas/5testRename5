@@ -14,6 +14,8 @@ build:
     - docker images
     - if [ $TWO = true ]; then fail; fi
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
+  on_failure:
+    - sleep 30
 
 integrations:
   notifications:
