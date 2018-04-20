@@ -22,7 +22,7 @@ integrations:
       recipients:
         - aidan@shippable.com
         - aidan.shippable@outlook.com
-      sendFailingSnippet: true
+#      sendFailingSnippet: true
 #    - integrationName: webhookintegration1
 #      type: webhook
 #      payload:
