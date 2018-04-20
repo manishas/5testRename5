@@ -20,8 +20,8 @@ integrations:
     - integrationName: email
       type: email
       recipients:
-        - aidan@shippable.com
         - aidan.shippable@outlook.com
+        - aidan@shippable.com
 #      sendFailingSnippet: true
 #    - integrationName: webhookintegration1
 #      type: webhook
