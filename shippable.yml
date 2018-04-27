@@ -8,6 +8,12 @@ env:
 build:
   pre_ci:
     - echo "testing"
+    - docker pull shippable/minv2:latest
+    - docker pull drydock/u14javall:prod
+    - docker pull drydock/u16javall:v5.8.2    
+    - docker pull drydock/u16javall:v6.1.4
+    - docker pull drydock/u16javall:v5.10.4
+
   pre_ci_boot:
     options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
   ci:
