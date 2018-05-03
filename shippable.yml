@@ -7,7 +7,7 @@ env:
 
 build:
   pre_ci:
-    - echo "testing"
+    - echo "testing $SHIPPABLE_AMI_VERSION"
     - docker pull shippable/minv2:latest
     - docker pull drydock/u14javall:prod
     - docker pull drydock/u16javall:v5.8.2    
@@ -25,13 +25,15 @@ build:
     - docker pull drydock/u16ruball:v6.2.4
 
   pre_ci_boot:
+    image_tag: $SHIPPABLE_AMI_VERSION
     options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
   ci:
+    - echo $SHIPPABLE_AMI_VERSION
     - docker images
  #   - if [ $TWO = true ]; then fail; fi
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
   on_failure:
-    - echo "failed"
+    - echo "failed $SHIPPABLE_AMI_VERSION"
 
 integrations:
   notifications:
