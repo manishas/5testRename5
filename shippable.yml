@@ -25,6 +25,7 @@ build:
     - echo $TEST_ONE
     - echo $TEST_TWO
     - echo $TEST_THREE
+    - fail
  #   - if [ $TWO = true ]; then fail; fi
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
   on_failure:
