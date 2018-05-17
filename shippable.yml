@@ -47,7 +47,10 @@ integrations:
         - aidan@shippable.com
       on_success: always
       sendFailingSnippet: true
-#    - integrationName: webhookintegration1
-#      type: webhook
-#      payload:
-#        - test=$BRANCH
+    - integrationName: webhookintegration1
+      type: webhook
+      payload:
+        - test=$BRANCH
+        - job=$JOB_NUMBER
+      on_start: always
+      on_success: always
