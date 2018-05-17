@@ -46,3 +46,4 @@ integrations:
         - job=$JOB_NUMBER
       on_start: always
       on_success: always
+      on_cancel: always
