@@ -3,15 +3,15 @@ language: none
 env:
   #- secure: kaJS5qZyZ17KuNZACYt8iaP8Orrstr1j2nYAu7WzIPn2n0L/wN+0F1nFYYGdKkJziQbsNP7lEn/RfvSBQYTzT/ygWs31s7XReGT+9090BJBfDRDSU5tAcJvE6yGic4GmwQh7+aB+2EAGQ1XcxK2j5Y2WS0/ocziXFx5CtnlwyjOA9LnIMTIi6RXJx3Im8aYnq8degdf+KMM6u0qoGE0JBY8PXyOU8QgEvLKghn/eG+d9YD61ZbxGpuyuFmsl4EEGcLgVqqkDovZGIbDpqxYZBPrKxtOwQEOwc41FvyYiNXeRCKdRBL4PAEeH1NrnPzoyqZBhpxNmVZsE+0t+BkBgPw== 
   - ONE: true
-  - TWO: true
-  - secure: ao40/7TWHuRjOdFBsXDsR2thb/NfQSEpHvJK/JgHwwS+5PVkFEGAmHqPXpVQJgEhzZTdCrL46MOLujtg1yS4sJnBXVakSHvnhTlyLN8di/URY6q89l/sbbnk52jNtvgQzev9L0QmG0p3YZFeDC47Uz3rawdhr5e2Q0KhQDDvdHWPte9A485r7ofsL171QKfjkuC5syDnYor0v/Oh3bzlvkku9uiLl7F6aoLZlG84Z5QxcCxMNc2Ep5hlf/jgVAfxDsWeDaQQXDxIUXCqZiV6Y2TtDIr1eRvSsvkNorjJvbphXVNgxsvQEiOCc4RZR6qTc4zNdnrTJz4sbX4jjko7uA== 
-  - secure: DKl5ZCAjV6Ft7W2jJ0p8jYFCrbAc+Oom8CUFa+k++PMFl/G9GireQOd8qOrsyQeb9HkQJ6rEtBo2KO/WqVJMbGvoXkt0JVxIZolxK3bldwM4TqySUbUcSI6VuwMlOyQvEZvYdAOZ2teDoqRn9YjxDrC6LI2xVXuoTIrJWLm935nz2HLqQ/+yxiC+ykg3rXWf6yfS+P/rk18DepcCIQlZ1f0r4JbIfKMPUqXZ58fLguSzmQiFZoowZfl7pLgcJCPLeCu8E+Z3VCa83CvZ4d9b1svuLxw+62p9dJ+Lc/HtMGjFA0spd6xuubdtyaN03uQpv1kArjChy3q9/ECEv9+fNw== 
-  - secure: Z0XpXVJ1ODAsy3zmiPCDTJuHcwxY5/dsGxgHJUylS/0nUckpLxW9oOkWFbgjZm9G8LedlmGn7Xfv4HausNgreMk3Ug8ufm/8rqWEyixecrr1GNCRemnKTPBCDO93B2xga0vHk6++J5iB2SXUBtI2uChhLusX6rruqmLN3oQOCrCFYUGizaJVfekb5cInQeEA3iGhFeqUUKU095qx+sRkWhoUTi9dCZe2pjPyea2dQwVU396snI8wniv1vwHdnknGDIPHkyrbEAqqLpWDZlo0M2CT0CQKK+AgHwKI1/9G8SNSJ9MMfAON4sHH6Cq2XtGbdIJ1stTrHNVbOng3Y02YMw== 
-  - secure: GUnK0esr9cnCAGsFpUWVTGUyo8zgXw6XpLYc1l9mv/KA0pXRoQ3Cq21VtKKAD8bzEPpiGT1IKR1lxNnY+Q6lKvmxOgo6bH4Kmang3jm7Nkg4RF73B0G7SW+EEPon9cBpr3A7tIa17z+RkWfXZo0yNuAS7NdJn/bz/0QGlcuy0ooJmytNojzFiAVMY3KgCm7y4qJwigg04Ks19kCHHgl8qlnB9ZCpwqSHxvWcIsMakJUBzqzUyV70a6B5mcwWWDDSSoXvkJGWjfnkpiAEZ6jCieZwLFNNAX7G6dWNCfqf44lqDMlbemi1AKVOHC9trYJUByfJR+xajod04HJbBRZ9GQ==
+#  - TWO: true
+#  - secure: ao40/7TWHuRjOdFBsXDsR2thb/NfQSEpHvJK/JgHwwS+5PVkFEGAmHqPXpVQJgEhzZTdCrL46MOLujtg1yS4sJnBXVakSHvnhTlyLN8di/URY6q89l/sbbnk52jNtvgQzev9L0QmG0p3YZFeDC47Uz3rawdhr5e2Q0KhQDDvdHWPte9A485r7ofsL171QKfjkuC5syDnYor0v/Oh3bzlvkku9uiLl7F6aoLZlG84Z5QxcCxMNc2Ep5hlf/jgVAfxDsWeDaQQXDxIUXCqZiV6Y2TtDIr1eRvSsvkNorjJvbphXVNgxsvQEiOCc4RZR6qTc4zNdnrTJz4sbX4jjko7uA== 
+#  - secure: DKl5ZCAjV6Ft7W2jJ0p8jYFCrbAc+Oom8CUFa+k++PMFl/G9GireQOd8qOrsyQeb9HkQJ6rEtBo2KO/WqVJMbGvoXkt0JVxIZolxK3bldwM4TqySUbUcSI6VuwMlOyQvEZvYdAOZ2teDoqRn9YjxDrC6LI2xVXuoTIrJWLm935nz2HLqQ/+yxiC+ykg3rXWf6yfS+P/rk18DepcCIQlZ1f0r4JbIfKMPUqXZ58fLguSzmQiFZoowZfl7pLgcJCPLeCu8E+Z3VCa83CvZ4d9b1svuLxw+62p9dJ+Lc/HtMGjFA0spd6xuubdtyaN03uQpv1kArjChy3q9/ECEv9+fNw== 
+#  - secure: Z0XpXVJ1ODAsy3zmiPCDTJuHcwxY5/dsGxgHJUylS/0nUckpLxW9oOkWFbgjZm9G8LedlmGn7Xfv4HausNgreMk3Ug8ufm/8rqWEyixecrr1GNCRemnKTPBCDO93B2xga0vHk6++J5iB2SXUBtI2uChhLusX6rruqmLN3oQOCrCFYUGizaJVfekb5cInQeEA3iGhFeqUUKU095qx+sRkWhoUTi9dCZe2pjPyea2dQwVU396snI8wniv1vwHdnknGDIPHkyrbEAqqLpWDZlo0M2CT0CQKK+AgHwKI1/9G8SNSJ9MMfAON4sHH6Cq2XtGbdIJ1stTrHNVbOng3Y02YMw== 
+#  - secure: GUnK0esr9cnCAGsFpUWVTGUyo8zgXw6XpLYc1l9mv/KA0pXRoQ3Cq21VtKKAD8bzEPpiGT1IKR1lxNnY+Q6lKvmxOgo6bH4Kmang3jm7Nkg4RF73B0G7SW+EEPon9cBpr3A7tIa17z+RkWfXZo0yNuAS7NdJn/bz/0QGlcuy0ooJmytNojzFiAVMY3KgCm7y4qJwigg04Ks19kCHHgl8qlnB9ZCpwqSHxvWcIsMakJUBzqzUyV70a6B5mcwWWDDSSoXvkJGWjfnkpiAEZ6jCieZwLFNNAX7G6dWNCfqf44lqDMlbemi1AKVOHC9trYJUByfJR+xajod04HJbBRZ9GQ==
 #  - secure: GPjrBoLSsBgW5Ko02t0LkSGeC84DwJ/6u3OABJrVfH14UouUAI6v3iOQo1FO0K4cFgUx2eoeZZS1hbCJwuhhJAJGAdrGAHCJxrdi5zBaGyXfVD3GjTDxF/pNbKfaPCYcLr5l4KP5vTSD+3hWU/8G8z9lvzVDJu+ktfQWH84x02j/j6JEY4NDRLqfucDO9u2AOp8ZxFO7vgFNL4jgyVYuHIWJbFMhRCMJtUpgIz1LX8FCXx+hIKKceQt5HpUvAeC005rcBgC9nS13SUNMS+YFo6X2Dhko5680IRtc8XcF3A1v1UzN6AI9I9srjkDaGX2bYS+67tpLtjLvG2X775EHQw==
-  - secure: GNbXdSBdVwBFpy0euy48jVuxAi6OQzbUOaLF6LeuApvtAO4w0ls+5GLyzr9e9f9Quu9HWh1Vo1pGpykgML95Muv+GiQk4zoBnxvs3EbqeoP31QFNjcnv396lvNXwV3NVyuQaFd1/JWrJ72j0UpvIGL/3w9++bwAQJbjlIxDGqPOL2fzWn7bsFNfuR0XosOtCxEn5T/nfftGYvPWr6efb82TvWP5GqwKoaL66qe079VZGsFpYYoAfr3WLNT6t7WiXhh+z6RVAR4VEwOnzKzU1/mUUyjjqTy1hPW81tFTVuEzsJDDApl0Ewznd9RL4/L/Mx6AnnBIo2LTMsK5lTSwduQ==
-  - secure: Ams2BVzloV9XFe5ZcKM/27vT9yl0crMoZaoGz38tgkViOPhU//t4SzSBwTDNEWzxNSXuxRZiyBAqoZvMn1b/wn6uY37HaLKiC7u5MM3mx+ONiBO/oF7OYhpKWTAjj8CY4xVPFuc6z5RVxz2OsYBKFjadUUbo3z1qihGDB6ak6TiBNiJnngJoRIsCUHyeNt2MSHH3xehc9iC4kTWq7KnVKqP2qV/YazZs4ASUf/nKiqHaxK+0+PaFS6Sn7+az9Dueado9sbt6du+iKXhgrNjEQlRUsvZPzMYD72xKCFysVWIf7XKDbnhCz4e/N0G54OekRufPnpAml1ywIl0X/KfcXw== 
-  - NINE: true
+#  - secure: GNbXdSBdVwBFpy0euy48jVuxAi6OQzbUOaLF6LeuApvtAO4w0ls+5GLyzr9e9f9Quu9HWh1Vo1pGpykgML95Muv+GiQk4zoBnxvs3EbqeoP31QFNjcnv396lvNXwV3NVyuQaFd1/JWrJ72j0UpvIGL/3w9++bwAQJbjlIxDGqPOL2fzWn7bsFNfuR0XosOtCxEn5T/nfftGYvPWr6efb82TvWP5GqwKoaL66qe079VZGsFpYYoAfr3WLNT6t7WiXhh+z6RVAR4VEwOnzKzU1/mUUyjjqTy1hPW81tFTVuEzsJDDApl0Ewznd9RL4/L/Mx6AnnBIo2LTMsK5lTSwduQ==
+#  - secure: Ams2BVzloV9XFe5ZcKM/27vT9yl0crMoZaoGz38tgkViOPhU//t4SzSBwTDNEWzxNSXuxRZiyBAqoZvMn1b/wn6uY37HaLKiC7u5MM3mx+ONiBO/oF7OYhpKWTAjj8CY4xVPFuc6z5RVxz2OsYBKFjadUUbo3z1qihGDB6ak6TiBNiJnngJoRIsCUHyeNt2MSHH3xehc9iC4kTWq7KnVKqP2qV/YazZs4ASUf/nKiqHaxK+0+PaFS6Sn7+az9Dueado9sbt6du+iKXhgrNjEQlRUsvZPzMYD72xKCFysVWIf7XKDbnhCz4e/N0G54OekRufPnpAml1ywIl0X/KfcXw== 
+#  - NINE: true
 
 build:
   pre_ci:
@@ -28,8 +28,8 @@ build:
     - echo $TEST_THREE
  #   - fail
  #   - if [ $ONE = true ]; then fail; fi
-    - if [ $TWO = true ]; then fail; fi
-    - if [ $NINE = true ]; then fail; fi
+  #  - if [ $TWO = true ]; then fail; fi
+  #  - if [ $NINE = true ]; then fail; fi
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
   on_failure:
     - echo "failed $SHIPPABLE_AMI_VERSION"
@@ -51,3 +51,10 @@ integrations:
       on_success: always
       on_failure: always
       on_cancel: always
+  hub:
+    - integrationName: DockerHub
+      type: docker
+  keys:
+    - integrationName: sshKey
+      type: sshKey
+      
