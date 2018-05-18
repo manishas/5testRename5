@@ -23,9 +23,9 @@ build:
   ci:
     - echo $SHIPPABLE_AMI_VERSION
     - docker images
-    - echo $TEST_ONE
-    - echo $TEST_TWO
-    - echo $TEST_THREE
+#    - echo $TEST_ONE
+#    - echo $TEST_TWO
+#    - echo $TEST_THREE
  #   - fail
  #   - if [ $ONE = true ]; then fail; fi
   #  - if [ $TWO = true ]; then fail; fi
