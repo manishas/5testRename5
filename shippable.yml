@@ -51,10 +51,10 @@ integrations:
       on_success: always
       on_failure: always
       on_cancel: always
-  hub:
-    - integrationName: DockerHub
-      type: docker
-  keys:
-    - integrationName: sshKey
-      type: sshKey
+#  hub:
+#    - integrationName: DockerHub
+#      type: docker
+#  key:
+#    - integrationName: sshKey
+#      type: sshKey
       
