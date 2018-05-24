@@ -55,7 +55,7 @@ integrations:
   hub:
     - integrationName: DockerHub
       type: dockerRegistryLogin
-  keys:
+  key:
     - integrationName: sshKey
       type: sshKey
   #deploy:
