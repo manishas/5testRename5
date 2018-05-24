@@ -51,13 +51,13 @@ integrations:
       on_success: always
       on_failure: always
       on_cancel: always
-  generic:
+  hub:
     - integrationName: DockerHub
-      type: docker
+      type: dockerRegistryLogin
   keys:
     - integrationName: sshKey
       type: sshKey
   deploy:
     - integrationName: AWS
-      type: deploy
+      type: amazonKeys
       
