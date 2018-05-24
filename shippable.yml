@@ -23,6 +23,7 @@ build:
   ci:
     - echo $SHIPPABLE_AMI_VERSION
     - docker images
+    - docker pull amurphy/test2:increment.1
 #    - echo $TEST_ONE
 #    - echo $TEST_TWO
 #    - echo $TEST_THREE
@@ -57,7 +58,7 @@ integrations:
   keys:
     - integrationName: sshKey
       type: sshKey
-  deploy:
-    - integrationName: AWS
-      type: amazonKeys
+  #deploy:
+  #  - integrationName: AWS
+  #    type: amazonKeys
       
