@@ -52,12 +52,12 @@ integrations:
       on_success: always
       on_failure: always
       on_cancel: always
-  hub:
-    - integrationName: DockerHub
-      type: dockerRegistryLogin
-  key:
-    - integrationName: sshKey
-      type: sshKey
+  #hub:
+  #  - integrationName: DockerHub
+  #    type: dockerRegistryLogin
+  #key:
+  #  - integrationName: sshKey
+  #    type: sshKey
   #deploy:
   #  - integrationName: AWS
   #    type: amazonKeys
