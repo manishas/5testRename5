@@ -3,7 +3,7 @@ language: none
 env:
   #- secure: kaJS5qZyZ17KuNZACYt8iaP8Orrstr1j2nYAu7WzIPn2n0L/wN+0F1nFYYGdKkJziQbsNP7lEn/RfvSBQYTzT/ygWs31s7XReGT+9090BJBfDRDSU5tAcJvE6yGic4GmwQh7+aB+2EAGQ1XcxK2j5Y2WS0/ocziXFx5CtnlwyjOA9LnIMTIi6RXJx3Im8aYnq8degdf+KMM6u0qoGE0JBY8PXyOU8QgEvLKghn/eG+d9YD61ZbxGpuyuFmsl4EEGcLgVqqkDovZGIbDpqxYZBPrKxtOwQEOwc41FvyYiNXeRCKdRBL4PAEeH1NrnPzoyqZBhpxNmVZsE+0t+BkBgPw== 
   - ONE: true
-#  - TWO: true
+  - TWO: true
 #  - secure: ao40/7TWHuRjOdFBsXDsR2thb/NfQSEpHvJK/JgHwwS+5PVkFEGAmHqPXpVQJgEhzZTdCrL46MOLujtg1yS4sJnBXVakSHvnhTlyLN8di/URY6q89l/sbbnk52jNtvgQzev9L0QmG0p3YZFeDC47Uz3rawdhr5e2Q0KhQDDvdHWPte9A485r7ofsL171QKfjkuC5syDnYor0v/Oh3bzlvkku9uiLl7F6aoLZlG84Z5QxcCxMNc2Ep5hlf/jgVAfxDsWeDaQQXDxIUXCqZiV6Y2TtDIr1eRvSsvkNorjJvbphXVNgxsvQEiOCc4RZR6qTc4zNdnrTJz4sbX4jjko7uA== 
 #  - secure: DKl5ZCAjV6Ft7W2jJ0p8jYFCrbAc+Oom8CUFa+k++PMFl/G9GireQOd8qOrsyQeb9HkQJ6rEtBo2KO/WqVJMbGvoXkt0JVxIZolxK3bldwM4TqySUbUcSI6VuwMlOyQvEZvYdAOZ2teDoqRn9YjxDrC6LI2xVXuoTIrJWLm935nz2HLqQ/+yxiC+ykg3rXWf6yfS+P/rk18DepcCIQlZ1f0r4JbIfKMPUqXZ58fLguSzmQiFZoowZfl7pLgcJCPLeCu8E+Z3VCa83CvZ4d9b1svuLxw+62p9dJ+Lc/HtMGjFA0spd6xuubdtyaN03uQpv1kArjChy3q9/ECEv9+fNw== 
 #  - secure: Z0XpXVJ1ODAsy3zmiPCDTJuHcwxY5/dsGxgHJUylS/0nUckpLxW9oOkWFbgjZm9G8LedlmGn7Xfv4HausNgreMk3Ug8ufm/8rqWEyixecrr1GNCRemnKTPBCDO93B2xga0vHk6++J5iB2SXUBtI2uChhLusX6rruqmLN3oQOCrCFYUGizaJVfekb5cInQeEA3iGhFeqUUKU095qx+sRkWhoUTi9dCZe2pjPyea2dQwVU396snI8wniv1vwHdnknGDIPHkyrbEAqqLpWDZlo0M2CT0CQKK+AgHwKI1/9G8SNSJ9MMfAON4sHH6Cq2XtGbdIJ1stTrHNVbOng3Y02YMw== 
@@ -23,12 +23,12 @@ build:
   ci:
     - echo $SHIPPABLE_AMI_VERSION
     - docker images
-    - docker pull amurphy/test2:increment.1
+ #   - docker pull amurphy/test2:increment.1
 #    - echo $TEST_ONE
 #    - echo $TEST_TWO
 #    - echo $TEST_THREE
  #   - fail
- #   - if [ $ONE = true ]; then fail; fi
+    - if [ $ONE = true ]; then fail; fi
   #  - if [ $TWO = true ]; then fail; fi
   #  - if [ $NINE = true ]; then fail; fi
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
