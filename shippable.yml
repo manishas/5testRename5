@@ -26,7 +26,7 @@ build:
     - echo $TEST_ONE
     - echo $TEST_TWO
     - echo $TEST_THREE
- #   - fail
+    - fail
  #   - if [ $ONE = true ]; then fail; fi
   #  - if [ $TWO = true ]; then fail; fi
   #  - if [ $NINE = true ]; then fail; fi
@@ -35,6 +35,7 @@ build:
     - cat doesnotexist.txt
   on_failure:
     - echo "failed $SHIPPABLE_AMI_VERSION"
+    - cat doesnotexist.txt
 
 integrations:
   notifications:
