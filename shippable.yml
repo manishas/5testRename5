@@ -1,4 +1,4 @@
-language: none
+language: ruby
 
 env:
   #- secure: kaJS5qZyZ17KuNZACYt8iaP8Orrstr1j2nYAu7WzIPn2n0L/wN+0F1nFYYGdKkJziQbsNP7lEn/RfvSBQYTzT/ygWs31s7XReGT+9090BJBfDRDSU5tAcJvE6yGic4GmwQh7+aB+2EAGQ1XcxK2j5Y2WS0/ocziXFx5CtnlwyjOA9LnIMTIi6RXJx3Im8aYnq8degdf+KMM6u0qoGE0JBY8PXyOU8QgEvLKghn/eG+d9YD61ZbxGpuyuFmsl4EEGcLgVqqkDovZGIbDpqxYZBPrKxtOwQEOwc41FvyYiNXeRCKdRBL4PAEeH1NrnPzoyqZBhpxNmVZsE+0t+BkBgPw== 
@@ -18,24 +18,27 @@ build:
     - echo "testing $SHIPPABLE_AMI_VERSION"
 
   pre_ci_boot:
-    image_tag: $SHIPPABLE_AMI_VERSION
-    options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
+    image_tag: v6.5.4 #$SHIPPABLE_AMI_VERSION
+    #options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
   ci:
     - echo $SHIPPABLE_AMI_VERSION
     - docker images
     - echo $TEST_ONE
     - echo $TEST_TWO
     - echo $TEST_THREE
-    - fail
+ #   - fail
  #   - if [ $ONE = true ]; then fail; fi
   #  - if [ $TWO = true ]; then fail; fi
   #  - if [ $NINE = true ]; then fail; fi
  #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
-  on_success:
-    - cat doesnotexist.txt
-  on_failure:
-    - echo "failed $SHIPPABLE_AMI_VERSION"
-    - cat doesnotexist.txt
+ # on_success:
+ #   - cat doesnotexist.txt
+#  on_failure:
+#    - echo "failed $SHIPPABLE_AMI_VERSION"
+#    - cat doesnotexist.txt
+
+services:
+  - redis
 
 integrations:
   notifications:
@@ -45,15 +48,15 @@ integrations:
         - aidan@shippable.com
       on_success: always
       sendFailingSnippet: true
-    - integrationName: webhookintegration1
-      type: webhook
-      payload:
-        - test=$BRANCH
-        - job=$JOB_NUMBER
-      on_start: always
-      on_success: always
-      on_failure: always
-      on_cancel: always
+#    - integrationName: webhookintegration1
+#      type: webhook
+#      payload:
+#        - test=$BRANCH
+#        - job=$JOB_NUMBER
+#      on_start: always
+#      on_success: always
+#      on_failure: always
+#      on_cancel: always
 #  hub:
 #    - integrationName: DockerHub
 #      type: docker
