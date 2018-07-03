@@ -1,4 +1,4 @@
-language: ruby
+#language: ruby
 
 #rvm: 2.2.3
 
@@ -24,8 +24,8 @@ build:
     image_tag: v6.5.4 #$SHIPPABLE_AMI_VERSION
     #options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
   ci:
-    - echo $SHIPPABLE_AMI_VERSION
-    - docker images
+#    - echo $SHIPPABLE_AMI_VERSION
+#    - docker images
     - ls -al
     - touch test.txt
     - ls -al
