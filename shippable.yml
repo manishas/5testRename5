@@ -29,9 +29,9 @@ build:
     - echo $TEST_ONE
     - echo $TEST_TWO
     - echo $TEST_THREE
-    - ls
+    - ls -al
     - touch test.txt
-    - ls
+    - ls -al
  #   - fail
  #   - if [ $ONE = true ]; then fail; fi
   #  - if [ $TWO = true ]; then fail; fi
