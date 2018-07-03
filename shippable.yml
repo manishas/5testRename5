@@ -16,6 +16,7 @@ env:
 #  - NINE: true
 
 build:
+  cache: true
   pre_ci:
     - echo "testing $SHIPPABLE_AMI_VERSION"
 
@@ -28,6 +29,9 @@ build:
     - echo $TEST_ONE
     - echo $TEST_TWO
     - echo $TEST_THREE
+    - ls
+    - touch test.txt
+    - ls
  #   - fail
  #   - if [ $ONE = true ]; then fail; fi
   #  - if [ $TWO = true ]; then fail; fi
