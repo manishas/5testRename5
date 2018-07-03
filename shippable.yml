@@ -23,8 +23,8 @@ build:
 #  pre_ci:
 #    - echo "testing $SHIPPABLE_AMI_VERSION"
 
-  pre_ci_boot:
-    image_tag: v6.2.4 #v6.1.4 #$SHIPPABLE_AMI_VERSION
+ #pre_ci_boot:
+ #   image_tag: v6.2.4 #v6.1.4 #$SHIPPABLE_AMI_VERSION
 #    #options: "-v $SHIPPABLE_BUILD_DIR:$SHIPPABLE_BUILD_DIR"
   ci:
 #    - echo $SHIPPABLE_AMI_VERSION
