@@ -19,6 +19,7 @@ build:
   cache: true
   cache_dir_list:
     - $SHIPPABLE_BUILD_DIR
+    - /test
 #  pre_ci:
 #    - echo "testing $SHIPPABLE_AMI_VERSION"
 
@@ -29,8 +30,11 @@ build:
 #    - echo $SHIPPABLE_AMI_VERSION
 #    - docker images
     - ls -al
-    - touch test.txt
+    - ls -al /test || true
+    - mkdir -p /test
+    - touch /test/test.txt
     - ls -al
+    - ls -al /test
 
 #services:
 #  - redis
