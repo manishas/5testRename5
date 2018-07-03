@@ -32,19 +32,9 @@ build:
     - ls -al
     - touch test.txt
     - ls -al
- #   - fail
- #   - if [ $ONE = true ]; then fail; fi
-  #  - if [ $TWO = true ]; then fail; fi
-  #  - if [ $NINE = true ]; then fail; fi
- #   - if [ $TWO = true ]; then shipctl post_resource_state 123-testing-123 versionName $BRANCH.$BUILD_NUMBER; fi
- # on_success:
- #   - cat doesnotexist.txt
-#  on_failure:
-#    - echo "failed $SHIPPABLE_AMI_VERSION"
-#    - cat doesnotexist.txt
 
-services:
-  - redis
+#services:
+#  - redis
 
 integrations:
   notifications:
