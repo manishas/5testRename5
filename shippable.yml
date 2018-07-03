@@ -17,6 +17,7 @@
 
 build:
   cache: true
+  cache_dir_list: $SHIPPABLE_BUILD_DIR
 #  pre_ci:
 #    - echo "testing $SHIPPABLE_AMI_VERSION"
 
