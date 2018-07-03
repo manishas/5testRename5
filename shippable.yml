@@ -33,14 +33,14 @@ build:
 #services:
 #  - redis
 
-integrations:
-  notifications:
-    - integrationName: email
-      type: email
-      recipients:
-        - aidan@shippable.com
-      on_success: always
-      sendFailingSnippet: true
+#integrations:
+#  notifications:
+#    - integrationName: email
+#      type: email
+#      recipients:
+#        - aidan@shippable.com
+#      on_success: always
+#      sendFailingSnippet: true
 #    - integrationName: webhookintegration1
 #      type: webhook
 #      payload:
