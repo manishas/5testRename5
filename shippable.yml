@@ -17,7 +17,7 @@
 
 branches:
   except:
-    - master
+    - other
 
 build:
 #  cache: true
