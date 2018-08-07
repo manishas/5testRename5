@@ -40,6 +40,7 @@ build:
     - DATE=`date --utc '+%Y-%m-%dT%H.%M.%SZ'`
     - DATE2="date --utc '+%Y-%m-%dT%H.%M.%SZ'"
     - DATE3='+%Y-%m-%dT%H.%M.%SZ'
+    - '+%Y-%m-%dT%H.%M.%SZ'
     - echo $DATE
     - echo $DATE2
     - echo $DATE3
