@@ -38,7 +38,7 @@ build:
 #    - ls -al
 #    - ls -al /test
     - DATE=`date --utc '+%Y-%m-%dT%H.%M.%SZ'`
-    - DATE2=date --utc '+%Y-%m-%dT%H.%M.%SZ'
+    - DATE2="date --utc '+%Y-%m-%dT%H.%M.%SZ'"
     - DATE3='+%Y-%m-%dT%H.%M.%SZ'
     - echo $DATE
     - echo $DATE2
