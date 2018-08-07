@@ -15,11 +15,6 @@
 #  - secure: Ams2BVzloV9XFe5ZcKM/27vT9yl0crMoZaoGz38tgkViOPhU//t4SzSBwTDNEWzxNSXuxRZiyBAqoZvMn1b/wn6uY37HaLKiC7u5MM3mx+ONiBO/oF7OYhpKWTAjj8CY4xVPFuc6z5RVxz2OsYBKFjadUUbo3z1qihGDB6ak6TiBNiJnngJoRIsCUHyeNt2MSHH3xehc9iC4kTWq7KnVKqP2qV/YazZs4ASUf/nKiqHaxK+0+PaFS6Sn7+az9Dueado9sbt6du+iKXhgrNjEQlRUsvZPzMYD72xKCFysVWIf7XKDbnhCz4e/N0G54OekRufPnpAml1ywIl0X/KfcXw== 
 #  - NINE: true
 
-branches:
-  except:
-    - master
-    - other
-
 build:
 #  cache: true
 #  cache_dir_list:
