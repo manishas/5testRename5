@@ -42,6 +42,9 @@ build:
     - touch /test/test.txt
     - ls -al
     - ls -al /test
+    - DATE=`date --utc '+%Y-%m-%dT%H.%M.%SZ'`
+    - echo $DATE
+    - shipctl post_resource_state "123_numbers" "versionName" $DATE
 
 #services:
 #  - redis
