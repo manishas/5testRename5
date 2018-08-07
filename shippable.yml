@@ -42,6 +42,7 @@ build:
     - DATE3='+%Y-%m-%dT%H.%M.%SZ'
     - DATE4='+%Y'
     - DATE5='%Y'
+    - DATE6=%Y
     - '+%Y-%m-%dT%H.%M.%SZ'
     - echo $DATE
     - echo $DATE2
