@@ -52,8 +52,12 @@ build:
 #services:
 #  - redis
 
-#integrations:
-#  notifications:
+integrations:
+  notifications:
+    - integrationName: slack-subint
+      type: slackKey
+      on_success: always
+
 #    - integrationName: email
 #      type: email
 #      recipients:
