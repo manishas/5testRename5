@@ -39,15 +39,15 @@ build:
 #    - ls -al /test
     - DATE=`date --utc '+%Y-%m-%dT%H.%M.%SZ'`
     - DATE2="date --utc '+%Y-%m-%dT%H.%M.%SZ'"
-    - DATE3='+%Y-%m-%dT%H.%M.%SZ'
-    - DATE4='+%Y'
-    - DATE5='%Y'
-    - DATE6=%Y
-    - '+%Y-%m-%dT%H.%M.%SZ'
-    - echo $DATE
-    - echo $DATE2
-    - echo $DATE3
-    - shipctl post_resource_state "123_numbers" "versionName" $DATE
+#    - DATE3='+%Y-%m-%dT%H.%M.%SZ'
+#    - DATE4='+%Y'
+#    - DATE5='%Y'
+#    - DATE6=%Y
+#    - '+%Y-%m-%dT%H.%M.%SZ'
+#    - echo $DATE
+#    - echo $DATE2
+#    - echo $DATE3
+#    - shipctl post_resource_state "123_numbers" "versionName" $DATE
 
 #services:
 #  - redis
@@ -57,6 +57,7 @@ integrations:
     - integrationName: slack
       type: slackKey
       on_success: always
+      on_failure: always
 
 #    - integrationName: email
 #      type: email
