@@ -54,7 +54,7 @@ build:
 
 integrations:
   notifications:
-    - integrationName: slack-subint
+    - integrationName: slack
       type: slackKey
       on_success: always
 
