@@ -55,7 +55,7 @@ build:
 integrations:
   notifications:
     - integrationName: slack
-      type: slack
+      type: slackKey
       recipients:
         - aidans-test-channel
       on_success: always
