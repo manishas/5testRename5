@@ -23,12 +23,12 @@ build:
 #  pre_ci:
 #    - echo "testing $SHIPPABLE_AMI_VERSION"
 
-  pre_ci_boot:
-    image_name: drydock/u16nodall
-    image_tag: master #v5.8.2 # v6.2.4 #v6.1.4 #$SHIPPABLE_AMI_VERSION
-    options: "--net=host"
+#pre_ci_boot:
+#    image_name: drydock/u16nodall
+#    image_tag: master #v5.8.2 # v6.2.4 #v6.1.4 #$SHIPPABLE_AMI_VERSION
+#    options: "--net=host"
   ci:
-#    - echo $SHIPPABLE_AMI_VERSION
+    - echo $SHIPPABLE_AMI_VERSION
 #    - docker images
 #    - rvm use 2.4.4
 #    - ls -al
@@ -37,8 +37,8 @@ build:
 #    - touch /test/test.txt
 #    - ls -al
 #    - ls -al /test
-    - DATE=`date --utc '+%Y-%m-%dT%H.%M.%SZ'`
-    - DATE2="date --utc '+%Y-%m-%dT%H.%M.%SZ'"
+#    - DATE=`date --utc '+%Y-%m-%dT%H.%M.%SZ'`
+#    - DATE2="date --utc '+%Y-%m-%dT%H.%M.%SZ'"
 #    - DATE3='+%Y-%m-%dT%H.%M.%SZ'
 #    - DATE4='+%Y'
 #    - DATE5='%Y'
