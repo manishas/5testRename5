@@ -1,6 +1,9 @@
 #language: python
 
-rvm: 2.2.3
+#rvm: 2.2.3
+node_js: 6.7.4
+
+bundler_args: --path $SHIPPABLE_BUILD_DIR/vendor/gems
 
 #env:
   #- secure: kaJS5qZyZ17KuNZACYt8iaP8Orrstr1j2nYAu7WzIPn2n0L/wN+0F1nFYYGdKkJziQbsNP7lEn/RfvSBQYTzT/ygWs31s7XReGT+9090BJBfDRDSU5tAcJvE6yGic4GmwQh7+aB+2EAGQ1XcxK2j5Y2WS0/ocziXFx5CtnlwyjOA9LnIMTIi6RXJx3Im8aYnq8degdf+KMM6u0qoGE0JBY8PXyOU8QgEvLKghn/eG+d9YD61ZbxGpuyuFmsl4EEGcLgVqqkDovZGIbDpqxYZBPrKxtOwQEOwc41FvyYiNXeRCKdRBL4PAEeH1NrnPzoyqZBhpxNmVZsE+0t+BkBgPw== 
@@ -14,6 +17,9 @@ rvm: 2.2.3
 #  - secure: GNbXdSBdVwBFpy0euy48jVuxAi6OQzbUOaLF6LeuApvtAO4w0ls+5GLyzr9e9f9Quu9HWh1Vo1pGpykgML95Muv+GiQk4zoBnxvs3EbqeoP31QFNjcnv396lvNXwV3NVyuQaFd1/JWrJ72j0UpvIGL/3w9++bwAQJbjlIxDGqPOL2fzWn7bsFNfuR0XosOtCxEn5T/nfftGYvPWr6efb82TvWP5GqwKoaL66qe079VZGsFpYYoAfr3WLNT6t7WiXhh+z6RVAR4VEwOnzKzU1/mUUyjjqTy1hPW81tFTVuEzsJDDApl0Ewznd9RL4/L/Mx6AnnBIo2LTMsK5lTSwduQ==
 #  - secure: Ams2BVzloV9XFe5ZcKM/27vT9yl0crMoZaoGz38tgkViOPhU//t4SzSBwTDNEWzxNSXuxRZiyBAqoZvMn1b/wn6uY37HaLKiC7u5MM3mx+ONiBO/oF7OYhpKWTAjj8CY4xVPFuc6z5RVxz2OsYBKFjadUUbo3z1qihGDB6ak6TiBNiJnngJoRIsCUHyeNt2MSHH3xehc9iC4kTWq7KnVKqP2qV/YazZs4ASUf/nKiqHaxK+0+PaFS6Sn7+az9Dueado9sbt6du+iKXhgrNjEQlRUsvZPzMYD72xKCFysVWIf7XKDbnhCz4e/N0G54OekRufPnpAml1ywIl0X/KfcXw== 
 #  - NINE: true
+
+env:
+  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage SHIPPABLE_NODE_VERSION=5.8.0
 
 services:
   - mysql
