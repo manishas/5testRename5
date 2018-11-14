@@ -24,6 +24,7 @@ env:
 services:
   - mysql
   - redis
+depth: 300
 
 build:
   cache: true
