@@ -12,3 +12,9 @@ resources:
     pointer:
       sourceName: "a-murphy/testrename"
 
+  - name: rename-repo2
+    type: gitRepo
+    integration: github
+    pointer:
+      sourceName: "a-murphy/5testRename5"
+
