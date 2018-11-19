@@ -16,7 +16,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: "a-murphy/5testRename5"
+      sourceName: "a-murphy/sample_jacoco"
       
   - name: rename-repo3
     type: gitRepo
