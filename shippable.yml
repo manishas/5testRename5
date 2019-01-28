@@ -1,5 +1,10 @@
 #language: python
 
+language: go
+
+go:
+  - 1.10.3
+
 rvm: 2.3.1
 node_js: 6.7.4
 
@@ -22,11 +27,11 @@ env:
 
 services:
   - mysql
-  - redis
+#  - redis
 
 build:
-  cache: true
-  cache_dir_list:
+#  cache: true
+#  cache_dir_list:
     - $SHIPPABLE_BUILD_DIR
 #    - /test
 #  pre_ci:
@@ -38,6 +43,7 @@ build:
 #    options: "--net=host"
   ci:
     - echo $SHIPPABLE_AMI_VERSION
+    - mysql -e "CREATE USER testuser@localhost IDENTIFIED BY 'testpassword';"
 #    - docker images
 #    - rvm use 2.4.4
 #    - ls -al
