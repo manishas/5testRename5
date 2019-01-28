@@ -32,7 +32,7 @@ services:
 build:
 #  cache: true
 #  cache_dir_list:
-    - $SHIPPABLE_BUILD_DIR
+#    - $SHIPPABLE_BUILD_DIR
 #    - /test
 #  pre_ci:
 #    - echo "testing $SHIPPABLE_AMI_VERSION"
