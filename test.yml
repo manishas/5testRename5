@@ -1,15 +1,15 @@
 resources:
-    - name: fileIntegrationResource
-      type: file
-      fileLocation: location
-      configuration:
-        files:
-          except:      file
-          only:        file       
-        integrationName: fileServerIntegration 
-      initialVersion:
-        fileName: file
-        fileDtTm: time
+  - name: fileIntegrationResource
+    type: file
+    fileLocation: location
+    configuration:
+      files:
+        except:      file
+        only:        file       
+      integrationName: fileServerIntegration 
+    initialVersion:
+      fileName: file
+      fileDtTm: time
    - name: sample_java_repo_test
      type: gitRepo
      repoPath: deepikasl/sample_java
