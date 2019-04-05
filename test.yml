@@ -9,15 +9,18 @@ resources:
       integrationName: fileServerIntegration 
     initialVersion:
       fileName: file
-      fileDtTm: time
   - name: sample_java_file_test
     type: file
-    fileUrl: text.js
+    fileLocation: text.js
     configuration:
-      integrationName: docker-int
+      integrationName: fileServerIntegration
     initialVersion:
-      fileName: test
       fileDtTm: test
+  - name: file_test
+    type: file
+    fileLocation: text.js
+    configuration:
+      integrationName: fileServerIntegration
        
 pipelines:
   - name: test_pipeline_1
