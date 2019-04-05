@@ -16,7 +16,7 @@ resources:
     configuration:
       integrationName: fileServerIntegration
     initialVersion:
-      fileName: test2
+      fileName: test3
   - name: file_test
     type: file
     fileLocation: text.js
@@ -140,6 +140,8 @@ pipelines:
           integrations:
             - github
         triggeredBy:
+          resources:
+            - sample_java_file_test
           steps:
             - main_step
         execution:
