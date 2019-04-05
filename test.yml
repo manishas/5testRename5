@@ -10,58 +10,14 @@ resources:
     initialVersion:
       fileName: file
       fileDtTm: time
-   - name: sample_java_repo_test
-     type: gitRepo
-     repoPath: deepikasl/sample_java
-     configuration:
-        integrationName: github-subint
-        branches:
-           except: test
-           only: master
-        tags:
-           except: none
-           only: none   
-        buildOn:
-           commit: true
-           pullRequest: true
-           pullRequestClose: true
-           release: true
-           tagPush: true
-           fileCommit: "*test"
-        shallowDepth: 2
-        gitConfig: 
-          - dont_know
-          - dont_know_2
-     initialVersion:
-       sha: master
-   - name: sample_java_file_test
-     type: file
-     fileUrl: text.js
-     configuration:
-        integrationName: docker-int
-     initialVersion:
-       fileName: test
-       fileDtTm: test
-   - name: sample_java_image_test
-     type: image
-     imageName: "library/nginx"
-     configuration:
-       integrationName: docker-int
-     initialVersion:
-       imageTag: latest
-   - name: sample_java_webhook_test
-     type: webhook
-     configuration:
-       integrationName: github-subint
-     initialVersion:
-       payload: test_payload
-   - name: sample_java_kube_test
-     type: cluster
-     configuration:
-       integrationName: kubeIntegration
-       bastionHostIP: 1.2.3.4
-       bastionUser: sshUser
-       bastionIntegrationName: sshKey-int
+  - name: sample_java_file_test
+    type: file
+    fileUrl: text.js
+    configuration:
+      integrationName: docker-int
+    initialVersion:
+      fileName: test
+      fileDtTm: test
        
 pipelines:
   - name: test_pipeline_1
@@ -110,11 +66,6 @@ pipelines:
 
       - name: main_step
         type: bash
-        configuration:
-          affinityGroup: test_group 
-          priority: 9999
-          timeoutSeconds: 40
-          cache: true
         setup:
           environmentVariables:
             normal:
@@ -137,8 +88,6 @@ pipelines:
           integrations:
             - github-subint
         triggeredBy:
-          resources:
-            - sample_java_repo_test
           steps:
             - in_trigger_step
         execution:
@@ -157,14 +106,8 @@ pipelines:
             - echo "Someone cancelled the job"
         outputResources:
           - sample_java_file_test
-          - sample_java_webhook_test
       - name: other_step
         type: bash
-        configuration:
-          affinityGroup: test_group 
-          priority: 9999
-          timeoutSeconds: 40
-          cache: true
         setup:
           environmentVariables:
             normal:
@@ -189,8 +132,6 @@ pipelines:
           integrations:
             - github-subint
         triggeredBy:
-          resources:
-            - sample_java_image_test
           steps:
             - main_step
         execution:
@@ -207,6 +148,3 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
-        outputResources:
-          - sample_java_webhook_test
-
