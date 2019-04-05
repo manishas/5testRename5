@@ -16,12 +16,14 @@ resources:
     configuration:
       integrationName: fileServerIntegration
     initialVersion:
-      fileDtTm: test
+      fileName: test
   - name: file_test
     type: file
     fileLocation: text.js
     configuration:
       integrationName: fileServerIntegration
+    initialVersion:
+      fileName: test
        
 pipelines:
   - name: test_pipeline_1
