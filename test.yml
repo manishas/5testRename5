@@ -15,7 +15,7 @@ resources:
     configuration:
       integrationName: sshKey 
     initialVersion:
-      fileName: file
+      targetIPs: file
   - name: sample_java_file_test
     type: file
     fileLocation: text.js
