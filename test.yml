@@ -6,7 +6,7 @@ resources:
       files:
         except:      file
         only:        file       
-      integrationName: fileServerIntegration .   #project integration
+      integrationName: fileServerIntegration 
     initialVersion:
       fileName: file
       fileDtTm: time
