@@ -18,6 +18,7 @@ resources:
     initialVersion:
       fileName:
         test: test
+        test2: test
   - name: file_test
     type: file
     fileLocation: text.js
