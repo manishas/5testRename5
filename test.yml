@@ -1,0 +1,12 @@
+resources:
+  - name: fileIntegrationResource
+    type: file
+    fileLocation: location
+    configuration:
+      files:
+        except:      file
+        only:        file       
+      integrationName: fileServerIntegration .   #project integration
+    initialVersion:
+      fileName: file
+      fileDtTm: time
