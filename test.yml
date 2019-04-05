@@ -10,6 +10,12 @@ resources:
     initialVersion:
       fileName: file
       fileDtTm: test6
+  - name: cluster
+    type: file
+    configuration:
+      integrationName: sshKey 
+    initialVersion:
+      fileName: file
   - name: sample_java_file_test
     type: file
     fileLocation: text.js
