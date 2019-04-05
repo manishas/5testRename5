@@ -95,7 +95,7 @@ pipelines:
               options: test
         requires:
           integrations:
-            - github-subint
+            - github
         triggeredBy:
           steps:
             - in_trigger_step
@@ -141,7 +141,7 @@ pipelines:
           resources:
             - sample_java_file_test
           integrations:
-            - github-subint
+            - github
         triggeredBy:
           steps:
             - main_step
