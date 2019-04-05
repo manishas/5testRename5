@@ -19,7 +19,7 @@ resources:
       fileName:
         test: test
         test2: test
-        test3: test
+        test3: test2
   - name: file_test
     type: file
     fileLocation: text.js
