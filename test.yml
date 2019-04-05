@@ -73,6 +73,8 @@ pipelines:
 
       - name: main_step
         type: bash
+        configuration:
+          affinityGroup: test_group 
         setup:
           environmentVariables:
             normal:
@@ -115,6 +117,8 @@ pipelines:
           - sample_java_file_test
       - name: other_step
         type: bash
+        configuration:
+          affinityGroup: test_group 
         setup:
           environmentVariables:
             normal:
