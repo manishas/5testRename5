@@ -11,7 +11,7 @@ resources:
       fileName: file
       fileDtTm: test6
   - name: cluster
-    type: file
+    type: cluster
     configuration:
       integrationName: sshKey 
     initialVersion:
