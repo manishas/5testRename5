@@ -22,8 +22,6 @@ resources:
     fileLocation: text.js
     configuration:
       integrationName: fileServerIntegration
-    initialVersion:
-      fileName: test
        
 pipelines:
   - name: test_pipeline_1
