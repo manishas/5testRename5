@@ -76,8 +76,11 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - bump_semver 1.2.3 minor
-            - read_json test.json test
+            - echo "testing encryption" > testfile.txt
+            - encrypt_file --output testencrypted.txt testfile.txt
+            - cat testencrypted.txt
+            - decrypt_file testencrypted.txt --output testunencrypted.txt
+            - cat testunencrypted.txt
 
       - name: main_step
         type: bash
