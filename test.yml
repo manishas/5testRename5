@@ -78,6 +78,8 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
+            - bump_server 1.2.3.4
+            - read_json test.json test
 
       - name: main_step
         type: bash
