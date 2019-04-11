@@ -76,9 +76,35 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - echo "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAnnRiI89AoDZYN3/hb3/pcwwMFuf14TRE9Zddvenhu0IddjWH\n1GaHvMjKBUhyV/UmHzBYuzPhQoqmEriAj0SjAbDQHoegIjJ7AUla7W1OiT5z+D2i\nshj606LCxev3IzDjwDpsreSswqTxHHXsTkYKDQ0EoUMcRxyvsBasTgDpNmaA68Do\n7PepsrjLBSicAuo9Ge65N8jdyrpG91FmRDjAie6XvkURZ2TOzWhqS0VjBWDcfMlY\nUmr4QHtE8DQfnUN1U1HS+tT24QexFewqRnJV4ebLvTcukOxJzrmEU9lCt7B1DWPk\nk9OzrB7affMFKntBzonVcd/22S+WglOaE7/AywIDAQABAoIBAFD9t/QJyUSawniL\nutTdEpwlekBzC/CyYNUPK3EZDLJEVv7G2citJ5BNKUWOBDQFMBkdAx2cpPT4HW7Q\nM5YHRTJmB9qzBBy2pLzBm+JjzpLEA07NYk2aCwsF1HyJ4eZw5NiqhEZV7iAHYt5j\nQAe6MQT+tHEg9mE6vmpJDIVKXenZqOJOo6c/RGnwrx1IGMCaeMoV1GOmjsUXMMcf\nMV9e4UAmtF8JSuLyFgVzip+e97eeYi3GGawpfss7LUMLORCyq/7jmyEELrkEBG4L\n6hRIXVj7DBztyQNA+9hFS8SHoMkULEPB0qtm2JMrtU5sG7eIx0CtlCwkd43KU62N\nRF28qCECgYEA0KeiNio9PGxPbz5hP2dTRHSmfX5bLCDPk4mn6Di/vhcton4XK1pb\nn0YmGkA8DicHIBtWTHrvEcIlhPew+94BuZ9uqUnfbdf4htabgrgMejEDaCVf7DSr\nQ0RYLNMLESMle/nzOLfbYP0iQzHHY62g2Kyxd7OfJ96R0azXEg6zQpMCgYEAwmi2\n8osxT+9T0Ij1gWB9krWGXHPQz4wwUqEYOYkQPrEdZQc3b87pihPF0eQrzZinB/YW\nxyqfagqll6Ie311oTlSHysEmkegR1CogzDzOTMkz7hIiBCEWdxIZC70+tUQbyISD\nnu87b/fv+kdn+RISaDQ53/BKKjm2KsB6dAkD0+kCgYAyXGOQgz1oehPqG7pJHV1B\npo4QuBC1Y+32BEGckSXmcZ24HIrnEdYPaVUE/QABwnW70B1SNFHDjYKUx1vWTs1H\nyi1hes0MrBX2JZI/SMDqNS5HUs4GKugzQimuF/oR1tPTSo7j36x5il9crIUdj+jE\no1nqNFZzvwqe+wKl/xpRNQKBgF2ldWL2O8XGgjg0kRZGNZcDC/ri6xXe8LQM1493\nf7TDOmadCE46fHK/vY2yfIsn2mXSW/yKgonhIQ0e0gJEi2cX/uVjD0I/aL8rn+rh\n63o/fV1TrMESczDeLeRiv58vdLatZn2bvaTc6ONFnEb1NpqtdadypzcZ369OUm4s\nnYRpAoGAHrfWHg0yRAZ4v76PuLGTb8pMr2Zlwlbrk2QvfxNbfKi8PlS95bmyYmpM\ncMX1BbRYORC5iEc3Ond8EPYVZb8wHoh3aD+1rjvaSkIuVZhTrv3eXGiWYjyTHw20\nkFdLUkUf/wbSOZ8SONz5J42dyNTEHHsZNJreUHj3PKzL4s3s38M=\n-----END RSA PRIVATE KEY-----" > testkey
-            - echo testkey
-
+            - |
+              echo "-----BEGIN RSA PRIVATE KEY-----
+              MIIEogIBAAKCAQEAnnRiI89AoDZYN3/hb3/pcwwMFuf14TRE9Zddvenhu0IddjWH
+              1GaHvMjKBUhyV/UmHzBYuzPhQoqmEriAj0SjAbDQHoegIjJ7AUla7W1OiT5z+D2i
+              shj606LCxev3IzDjwDpsreSswqTxHHXsTkYKDQ0EoUMcRxyvsBasTgDpNmaA68Do
+              7PepsrjLBSicAuo9Ge65N8jdyrpG91FmRDjAie6XvkURZ2TOzWhqS0VjBWDcfMlY
+              Umr4QHtE8DQfnUN1U1HS+tT24QexFewqRnJV4ebLvTcukOxJzrmEU9lCt7B1DWPk
+              k9OzrB7affMFKntBzonVcd/22S+WglOaE7/AywIDAQABAoIBAFD9t/QJyUSawniL
+              utTdEpwlekBzC/CyYNUPK3EZDLJEVv7G2citJ5BNKUWOBDQFMBkdAx2cpPT4HW7Q
+              M5YHRTJmB9qzBBy2pLzBm+JjzpLEA07NYk2aCwsF1HyJ4eZw5NiqhEZV7iAHYt5j
+              QAe6MQT+tHEg9mE6vmpJDIVKXenZqOJOo6c/RGnwrx1IGMCaeMoV1GOmjsUXMMcf
+              MV9e4UAmtF8JSuLyFgVzip+e97eeYi3GGawpfss7LUMLORCyq/7jmyEELrkEBG4L
+              6hRIXVj7DBztyQNA+9hFS8SHoMkULEPB0qtm2JMrtU5sG7eIx0CtlCwkd43KU62N
+              RF28qCECgYEA0KeiNio9PGxPbz5hP2dTRHSmfX5bLCDPk4mn6Di/vhcton4XK1pb
+              n0YmGkA8DicHIBtWTHrvEcIlhPew+94BuZ9uqUnfbdf4htabgrgMejEDaCVf7DSr
+              Q0RYLNMLESMle/nzOLfbYP0iQzHHY62g2Kyxd7OfJ96R0azXEg6zQpMCgYEAwmi2
+              8osxT+9T0Ij1gWB9krWGXHPQz4wwUqEYOYkQPrEdZQc3b87pihPF0eQrzZinB/YW
+              xyqfagqll6Ie311oTlSHysEmkegR1CogzDzOTMkz7hIiBCEWdxIZC70+tUQbyISD
+              nu87b/fv+kdn+RISaDQ53/BKKjm2KsB6dAkD0+kCgYAyXGOQgz1oehPqG7pJHV1B
+              po4QuBC1Y+32BEGckSXmcZ24HIrnEdYPaVUE/QABwnW70B1SNFHDjYKUx1vWTs1H
+              yi1hes0MrBX2JZI/SMDqNS5HUs4GKugzQimuF/oR1tPTSo7j36x5il9crIUdj+jE
+              o1nqNFZzvwqe+wKl/xpRNQKBgF2ldWL2O8XGgjg0kRZGNZcDC/ri6xXe8LQM1493
+              f7TDOmadCE46fHK/vY2yfIsn2mXSW/yKgonhIQ0e0gJEi2cX/uVjD0I/aL8rn+rh
+              63o/fV1TrMESczDeLeRiv58vdLatZn2bvaTc6ONFnEb1NpqtdadypzcZ369OUm4s
+              nYRpAoGAHrfWHg0yRAZ4v76PuLGTb8pMr2Zlwlbrk2QvfxNbfKi8PlS95bmyYmpM
+              cMX1BbRYORC5iEc3Ond8EPYVZb8wHoh3aD+1rjvaSkIuVZhTrv3eXGiWYjyTHw20
+              kFdLUkUf/wbSOZ8SONz5J42dyNTEHHsZNJreUHj3PKzL4s3s38M=
+              -----END RSA PRIVATE KEY-----" > testkey
+            - cat testkey
             - echo "testing encryption" > testfile.txt
             - encrypt_file --output testencrypted.txt testfile.txt --key testkey
             - cat testencrypted.txt
