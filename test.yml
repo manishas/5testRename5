@@ -1,15 +1,15 @@
-resources:
-  - name: fileIntegrationResource
-    type: file
-    fileLocation: location
-    configuration:
-      files:
-        except:      file
-        only:        file       
-      integrationName: fileServerIntegration 
-    initialVersion:
-      fileName: file
-      fileDtTm: test6
+#resources:
+#  - name: fileIntegrationResource
+#    type: file
+#    fileLocation: location
+#    configuration:
+#      files:
+#        except:      file
+#        only:        file       
+#      integrationName: fileServerIntegration 
+#    initialVersion:
+#      fileName: file
+#      fileDtTm: test6
 #  - name: cluster
 #    type: cluster
 #    configuration:
