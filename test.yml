@@ -104,9 +104,11 @@ pipelines:
               cMX1BbRYORC5iEc3Ond8EPYVZb8wHoh3aD+1rjvaSkIuVZhTrv3eXGiWYjyTHw20
               kFdLUkUf/wbSOZ8SONz5J42dyNTEHHsZNJreUHj3PKzL4s3s38M=
               -----END RSA PRIVATE KEY-----" > testkey
-            - cat testkey
+            - |
+              echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCedGIjz0CgNlg3f+Fvf+lzDAwW5/XhNET1l1296eG7Qh12NYfUZoe8yMoFSHJX9SYfMFi7M+FCiqYSuICPRKMBsNAeh6AiMnsBSVrtbU6JPnP4PaKyGPrTosLF6/cjMOPAOmyt5KzCpPEcdexORgoNDQShQxxHHK+wFqxOAOk2ZoDrwOjs96myuMsFKJwC6j0Z7rk3yN3Kukb3UWZEOMCJ7pe+RRFnZM7NaGpLRWMFYNx8yVhSavhAe0TwNB+dQ3VTUdL61PbhB7EV7CpGclXh5su9Ny6Q7EnOuYRT2UK3sHUNY+ST07OsHtp98wUqe0HOidVx3/bZL5aCU5oTv8DL 5ad12a0eeae5f10700d0c78e" > testkey.pub
+            
             - echo "testing encryption" > testfile.txt
-            - encrypt_file --output testencrypted.txt testfile.txt --key testkey
+            - encrypt_file --output testencrypted.txt testfile.txt --key testkey.pub
             - cat testencrypted.txt
             - decrypt_file testencrypted.txt --output testunencrypted.txt
             - cat testunencrypted.txt
