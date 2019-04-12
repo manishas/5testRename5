@@ -85,6 +85,11 @@ pipelines:
             - cat testencrypted.txt
             - decrypt_file testencrypted.txt --output testunencrypted.txt --key key.pem
             - cat testunencrypted.txt
+            - encrypt_string "encryptme" --key pub.pem
+            - encryptedstring=$(encrypt_string "encryptme" --key pub.pem)
+            - echo "$encryptedstring"
+            - decrypt_string $encryptedstring --key key.pem
+            - decrypt_string $encryptedstring
 
       - name: main_step
         type: bash
