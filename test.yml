@@ -1,4 +1,16 @@
-#resources:
+resources:
+  - name: gitRepoResource
+    type: gitRepo
+    repoPath: a-murphy/5testRename5
+    configuration:
+      integrationName: github
+      buildOn:
+         commit: false
+         pullRequest: false
+         pullRequestClose: false
+         release: false
+         tagPush: false
+
 #  - name: fileIntegrationResource
 #    type: file
 #    fileLocation: location
@@ -116,6 +128,8 @@ pipelines:
         requires:
           integrations:
             - github
+          resources:
+            - gitRepoResource
         triggeredBy:
           steps:
             - in_trigger_step
