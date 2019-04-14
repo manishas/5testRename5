@@ -10,6 +10,8 @@ resources:
          pullRequestClose: false
          release: false
          tagPush: false
+    initialVersion:
+      sha: 64bfa23
 
 #  - name: fileIntegrationResource
 #    type: file
