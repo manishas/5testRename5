@@ -5,11 +5,11 @@ resources:
     configuration:
       integrationName: github
       buildOn:
-         commit: false
-         pullRequest: false
-         pullRequestClose: false
-         release: false
-         tagPush: false
+    #     commit: false
+    #     pullRequest: false
+    #     pullRequestClose: false
+    #     release: false
+    #     tagPush: false
     initialVersion:
       sha: master
   - name: gitRepoResource2
@@ -170,8 +170,8 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
-        outputResources:
-          - gitRepoResource2
+       # outputResources:
+       #   - gitRepoResource2
       - name: other_step
         type: bash
         configuration:
