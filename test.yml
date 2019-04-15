@@ -72,7 +72,7 @@ pipelines:
       environmentVariables:
         readOnly:
           ENV1: value-pipe-1
-          ENV2: value-pipe-2
+    #      ENV2: value-pipe-2
       runtime:            
         type: image
         image:
