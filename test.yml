@@ -158,8 +158,8 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - git_changes --resource gitRepoResource
-            - git_changes --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
+            - compare_git --resource gitRepoResource
+            - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
             - replicate_resource gitRepoResource gitRepoResource2 --match-settings
             - replicate_resource gitRepoResource gitRepoResource2
           onSuccess:
