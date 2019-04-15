@@ -12,6 +12,7 @@ resources:
     #     tagPush: false
     initialVersion:
       sha: master
+
   - name: gitRepoResource2
     type: gitRepo
     repoPath: a-murphy/5testRename5
