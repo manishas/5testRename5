@@ -141,7 +141,7 @@ pipelines:
             - echo "executing task command 1"
             - echo "executing task command 2"
             - git_changes --resource gitRepoResource
-            - git_changes --commit-range master~2...master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
+            - git_changes --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
           onSuccess:
             - echo "Job well done!"
           onFailure:
