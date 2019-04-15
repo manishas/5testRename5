@@ -12,6 +12,23 @@ resources:
          tagPush: false
     initialVersion:
       sha: master
+  - name: gitRepoResource2
+    type: gitRepo
+    repoPath: a-murphy/5testRename5
+    configuration:
+      integrationName: github
+      buildOn:
+         commit: false
+         pullRequest: false
+         pullRequestClose: false
+         release: false
+         tagPush: false
+      tags:
+        only: tag1|tag2
+      branches:
+        only: master|test
+    initialVersion:
+      sha: master
 
 #  - name: fileIntegrationResource
 #    type: file
@@ -131,6 +148,7 @@ pipelines:
             - github
           resources:
             - gitRepoResource
+            - gitRepoResource2
         triggeredBy:
           steps:
             - in_trigger_step
@@ -142,6 +160,8 @@ pipelines:
             - echo "executing task command 2"
             - git_changes --resource gitRepoResource
             - git_changes --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
+            - replicate_resource gitRepoResource gitRepoResource2 --match-settings
+            - replicate_resource gitRepoResource gitRepoResource2
           onSuccess:
             - echo "Job well done!"
           onFailure:
@@ -150,8 +170,8 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
-    #    outputResources:
-    #      - sample_java_file_test
+        outputResources:
+          - gitRepoResource2
       - name: other_step
         type: bash
         configuration:
