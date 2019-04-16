@@ -96,14 +96,14 @@ pipelines:
               SECURE_ENV1: test_value
               SECURE_ENV2: test_value
           runtime:            
-            type: image
-            image:
-              language: java
-              versions: v1.1
-            custom: 
-              name: test
-              tag:  test
-              options: test
+            type: host
+          #  image:
+          #    language: java
+          #    versions: v1.1
+          #  custom: 
+          #    name: test
+          #    tag:  test
+          #    options: test
         execution:
           onExecute:
             - bump_semver v1.2.3 minor
