@@ -121,9 +121,9 @@ pipelines:
         configuration:
           affinityGroup: test_group 
         setup:
-          environmentVariables:
-            normal:
-              ENV1: value1
+        #  environmentVariables:
+        #    normal:
+        #      ENV1: value1
           #    ENV2: value2
           #  encrypted:
           #    SECURE_ENV1: test_value
