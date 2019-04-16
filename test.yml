@@ -149,7 +149,6 @@ pipelines:
             - github
           resources:
             - gitRepoResource
-            - gitRepoResource2
         triggeredBy:
           steps:
             - in_trigger_step
@@ -171,8 +170,8 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
-       # outputResources:
-       #   - gitRepoResource2
+        outputResources:
+          - gitRepoResource2
       - name: other_step
         type: bash
         configuration:
