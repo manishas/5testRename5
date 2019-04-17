@@ -126,6 +126,11 @@ pipelines:
         requires:
           integrations:
             - github
+            - jira
+            - airbrake
+            - newRelic
+            - slack
+            - webhook
           resources:
             - gitRepoResource
         triggeredBy:
@@ -139,8 +144,13 @@ pipelines:
             - echo "executing task command 2"
             - compare_git --resource gitRepoResource
             - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
-            - replicate_resource gitRepoResource gitRepoResource2 --match-settings
-            - replicate_resource gitRepoResource gitRepoResource2
+         #   - replicate_resource gitRepoResource gitRepoResource2 --match-settings
+         #   - replicate_resource gitRepoResource gitRepoResource2
+            - send_notification jira
+            - send_notification airbrake
+            - send_notification newRelic
+            - send_notification slack
+            - send_notification webhook
           onSuccess:
             - echo "Job well done!"
           onFailure:
