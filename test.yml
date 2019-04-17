@@ -146,9 +146,9 @@ pipelines:
             - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
          #   - replicate_resource gitRepoResource gitRepoResource2 --match-settings
          #   - replicate_resource gitRepoResource gitRepoResource2
-            - send_notification jira --project-id test --type=test | true
-            - send_notification airbrake
-            - send_notification newRelic
+            - send_notification jira --project-id test --type test | true
+            - send_notification airbrake --type test | true
+            - send_notification newRelic | true
             - send_notification slack
             - send_notification webhook
           onSuccess:
