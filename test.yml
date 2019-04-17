@@ -148,7 +148,7 @@ pipelines:
          #   - replicate_resource gitRepoResource gitRepoResource2
             - send_notification jira --project-id test --type test --summary "testing" | true
             - send_notification airbrake --type deploy | true
-            - send_notification newRelic --app-id test | true
+            - send_notification newRelic --appId test | true
             - send_notification slack
             - send_notification webhook
           onSuccess:
