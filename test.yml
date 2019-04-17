@@ -147,8 +147,8 @@ pipelines:
          #   - replicate_resource gitRepoResource gitRepoResource2 --match-settings
          #   - replicate_resource gitRepoResource gitRepoResource2
             - send_notification jira --project-id test --type test --summary "testing"
-            - send_notification airbrake --type deploy --project-id project | true
-            - send_notification newRelic --appId test | true
+            - send_notification airbrake --type deploy --project-id project
+            - send_notification newRelic --appId test --type test
             - send_notification slack --text "This is a test."
             - send_notification webhook
           onSuccess:
