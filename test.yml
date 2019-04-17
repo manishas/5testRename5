@@ -151,8 +151,8 @@ pipelines:
          #   - send_notification newRelic --appName test --type test --revision revised
             #- send_notification slack --text "This is a test."
             - send_notification webhook
-            - write_output gitRepoResource2 --values key1 value1 key2 value2 key3 "value 3"
-            - write_output gitRepoResource2 --separator , --values key1,value1,key2,value2,key3,"value 3"
+            - write_output gitRepoResource2 key1 value1 key2 value2 key3 "value 3"
+            - write_output gitRepoResource2 --separator , key1,value1,key2,value2,key3,"value 3"
           onSuccess:
             - echo "Job well done!"
           onFailure:
