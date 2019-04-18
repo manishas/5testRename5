@@ -156,8 +156,8 @@ pipelines:
             #- send_notification slack --text "This is a test."
             - send_notification webhook
             - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
-            - switch_env python 3.7.2
-            - switch_env python 3.6.0
+            - switch_env python 3.7
+            - switch_env python 3.6
           onSuccess:
             - echo "Job well done!"
           onFailure:
