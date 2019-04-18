@@ -122,7 +122,11 @@ pipelines:
           #    SECURE_ENV1: test_value
           #    SECURE_ENV2: test_value
           runtime:            
-            type: host
+            type: container
+            image:
+              custom: 
+                name: drydock/u16javall
+                tag:  v7.1.4
         requires:
           integrations:
             - github
