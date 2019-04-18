@@ -83,12 +83,12 @@ pipelines:
         setup:
           runtime:            
             type: host
-          #  image:
-          #    language: java
-          #    versions: v1.1
-          #  custom: 
-          #    name: test
-          #    tag:  test
+            image:
+              language: java
+              versions: v1.1
+            custom: 
+              name: drydock/u16javall
+              tag:  v7.1.4
           #    options: test
         execution:
           onExecute:
