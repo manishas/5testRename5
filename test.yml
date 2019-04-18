@@ -122,7 +122,7 @@ pipelines:
           #    SECURE_ENV1: test_value
           #    SECURE_ENV2: test_value
           runtime:            
-            type: container
+            type: image
             image:
               custom: 
                 name: drydock/u16javall
