@@ -160,8 +160,8 @@ pipelines:
          #   - switch_env ruby 2.6.0
          #   - switch_env ruby ruby-head
          #   - switch_env ruby jruby-head --jdk openjdk11 --bundler 1.18.0
-            - switch_env php 7.3.1
-            - switch_env php 5.6
+         #   - switch_env php 7.3.1
+            - switch_env php 5.6.30
           onSuccess:
             - echo "Job well done!"
           onFailure:
