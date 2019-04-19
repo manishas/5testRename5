@@ -164,7 +164,7 @@ pipelines:
          #   - switch_env php 5.6.30
           #  - switch_env scala
           #  - switch_env clojure
-            - switch_env python
+            - switch_env python 3.7 3.7
             - switch_env c --jdk openjdk11
           #  - switch_env c --jdk openjdk11 4
           onSuccess:
