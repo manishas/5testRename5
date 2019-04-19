@@ -158,8 +158,8 @@ pipelines:
             - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
           #  - switch_env ruby jruby-9.2.3.0
             - switch_env ruby 2.6.0
-            - switch_env ruby ruby-head
-            - switch_env ruby jruby-head --jdk openjdk11 --bundler 1.18.0
+         #   - switch_env ruby ruby-head
+         #   - switch_env ruby jruby-head --jdk openjdk11 --bundler 1.18.0
             - switch_env ruby jruby-head
           onSuccess:
             - echo "Job well done!"
