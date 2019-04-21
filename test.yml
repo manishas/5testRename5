@@ -30,6 +30,20 @@ resources:
         only: master|test
     initialVersion:
       sha: master
+      
+  - name: pythonRepoResource
+    type: gitRepo
+    repoPath: a-murphy/sample_python_services
+    configuration:
+      integrationName: github
+      buildOn:
+         commit: true
+         pullRequest: true
+         pullRequestClose: false
+         release: true
+         tagPush: true
+    initialVersion:
+      sha: master
 
 #  - name: fileIntegrationResource
 #    type: file
@@ -114,22 +128,15 @@ pipelines:
         configuration:
           affinityGroup: test_group 
         setup:
-        #  environmentVariables:
-        #    normal:
-        #      ENV1: value1
-          #    ENV2: value2
-          #  encrypted:
-          #    SECURE_ENV1: test_value
-          #    SECURE_ENV2: test_value
           runtime:            
             type: image
             image:
               custom: 
-                name: drydock/u16javall
+                name: drydock/u16pytall
                 tag:  v7.1.4
         requires:
           resources:
-            - gitRepoResource
+            - pythonRepoResource
         triggeredBy:
           steps:
             - in_trigger_step
@@ -139,11 +146,12 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - compare_git --resource gitRepoResource
-            - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
-            - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
-            - switch_env c --jdk openjdk11
-          #  - switch_env c --jdk openjdk11 4
+            - compare_git --resource pythonRepoResource
+            - switch_env python 2.7
+            - pip install -r requirements.txt
+            - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+            - coverage run --branch test.py
+            - coverage xml -o shippable/codecoverage/coverage.xml test.py
           onSuccess:
             - echo "Job well done!"
           onFailure:
@@ -152,8 +160,6 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
-        outputResources:
-          - gitRepoResource2
       - name: other_step
         type: bash
         configuration:
