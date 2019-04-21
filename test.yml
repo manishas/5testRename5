@@ -154,6 +154,9 @@ pipelines:
             - ../node_modules/.bin/mocha --recursive "**/*.spec.js" -R mocha-junit-reporter --reporter-options mochaFile=../testresults.xml
             - ../node_modules/.bin/istanbul --include-all-sources cover -root "../routes" ../node_modules/mocha/bin/_mocha -- -R spec-xunit-file --recursive "**/*.spec.js"
             - ../node_modules/.bin/istanbul report cobertura --dir ../coverageReport
+            - cd .. && ls
+            - parse_tests testresults.xml
+            - parse_coverage coverageReport
           onSuccess:
             - echo "Job well done!"
           onFailure:
