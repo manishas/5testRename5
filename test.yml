@@ -147,6 +147,7 @@ pipelines:
             - echo "executing task command 1"
             - echo "executing task command 2"
             - compare_git --resource pythonRepoResource
+            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.pythonRepoResource.resourcePath')/gitRepo"
             - switch_env python 2.7
             - pip install -r requirements.txt
             - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
