@@ -31,9 +31,9 @@ resources:
     initialVersion:
       sha: master
       
-  - name: pythonRepoResource
+  - name: nodeRepoResource
     type: gitRepo
-    repoPath: a-murphy/sample_python_services
+    repoPath: a-murphy/basic-node
     configuration:
       integrationName: github
       buildOn:
@@ -132,11 +132,11 @@ pipelines:
             type: image
             image:
               custom: 
-                name: drydock/u16pytall
+                name: drydock/u16nodall
                 tag:  v7.1.4
         requires:
           resources:
-            - pythonRepoResource
+            - nodeRepoResource
         triggeredBy:
           steps:
             - in_trigger_step
@@ -146,13 +146,14 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - compare_git --resource pythonRepoResource
-            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.pythonRepoResource.resourcePath')/gitRepo"
-            - switch_env python 2.7
-            - pip install -r requirements.txt
-            - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-            - coverage run --branch test.py
-            - coverage xml -o shippable/codecoverage/coverage.xml test.py
+            - compare_git --resource nodeRepoResource
+            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath')/gitRepo"
+            - switch_env nodejs 0.12
+            - npm install
+            - cd tests
+            - ../node_modules/.bin/mocha --recursive "**/*.spec.js" -R mocha-junit-reporter --reporter-options mochaFile=../testresults.xml
+            - ../node_modules/.bin/istanbul --include-all-sources cover -root "../routes" ../node_modules/mocha/bin/_mocha -- -R spec-xunit-file --recursive "**/*.spec.js"
+            - ../node_modules/.bin/istanbul report cobertura --dir ../coverageReport
           onSuccess:
             - echo "Job well done!"
           onFailure:
