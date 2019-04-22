@@ -83,9 +83,9 @@ resources:
 pipelines:
   - name: test_pipeline_1
     setup:
-      environmentVariables:
-        readOnly:
-          ENV1: value-pipe-1
+   #   environmentVariables:
+   #     readOnly:
+   #       ENV1: value-pipe-1
     #      ENV2: value-pipe-2
       runtime:            
         type: host
@@ -170,13 +170,13 @@ pipelines:
         configuration:
           affinityGroup: test_group 
         setup:
-          environmentVariables:
-            normal:
-              ENV1: value11
-              ENV2: value21
-            encrypted:
-              SECURE_ENV1: test_value1
-              SECURE_ENV2: test_value1
+        #  environmentVariables:
+        #    normal:
+        #      ENV1: value11
+        #      ENV2: value21
+        #    encrypted:
+        #      SECURE_ENV1: test_value1
+        #      SECURE_ENV2: test_value1
           runtime:            
             type: host
         requires:
