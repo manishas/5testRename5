@@ -156,7 +156,7 @@ pipelines:
             - ../node_modules/.bin/istanbul report cobertura --dir ../coverageReport
             - cd .. && ls
             - save_tests testresults.xml
-            - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
+        #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
             - echo "Job well done!"
           onFailure:
