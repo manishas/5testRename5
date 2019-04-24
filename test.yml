@@ -155,8 +155,8 @@ pipelines:
             - ../node_modules/.bin/istanbul --include-all-sources cover -root "../routes" ../node_modules/mocha/bin/_mocha -- -R spec-xunit-file --recursive "**/*.spec.js"
             - ../node_modules/.bin/istanbul report cobertura --dir ../coverageReport
             - cd .. && ls
-            - parse_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
-            - parse_coverage $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #coverageReport
+            - save_tests testresults.xml
+            - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
             - echo "Job well done!"
           onFailure:
