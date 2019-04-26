@@ -156,6 +156,13 @@ pipelines:
             - ../node_modules/.bin/istanbul report cobertura --dir ../coverageReport
             - cd .. && ls
             - save_tests testresults.xml
+            - cache_files shippable.yml myYml
+            - mkdir -p testing/test
+            - echo "testing" > testing/test/text.txt
+            - echo "test2" > testing/test/text2.txt
+            - cache_files testing/test myDirectory
+            - cache_files *.yml myWildcard
+            
         #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
             - echo "Job well done!"
