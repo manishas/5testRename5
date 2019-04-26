@@ -163,7 +163,7 @@ pipelines:
             - cache_files testing/test myDirectory
             - cp shippable.yml shippable2.yml
             - cache_files *.yml myWildcard
-            - cache_files doesnotexist.txt
+            - cache_files doesnotexist.txt test
             
         #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
