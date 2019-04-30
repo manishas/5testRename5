@@ -143,6 +143,7 @@ pipelines:
             - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
             - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
             - switch_env c --jdk openjdk11
+            - add_run_variable testRunVariable="testing" testingAgain=2 testThree=three
           #  - switch_env c --jdk openjdk11 4
           onSuccess:
             - echo "Job well done!"
@@ -184,6 +185,9 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
+            - echo "$testRunVariable"
+            - echo "$testingAgain"
+            - echo "$testThree"
           onSuccess:
             - echo "Job well done!"
           onFailure:
