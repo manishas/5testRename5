@@ -173,7 +173,6 @@ pipelines:
             - add_run_variable testRunVariable="testing" testingAgain=2 testThree=three
             - save_run_state testyml.yml myYml
             - save_run_state *.yml myWildcard
-            - save_run_state testing/test run.env
             
         #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
