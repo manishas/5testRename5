@@ -160,13 +160,6 @@ pipelines:
         configuration:
           affinityGroup: test_group 
         setup:
-          environmentVariables:
-            normal:
-              ENV1: value11
-              ENV2: value21
-            encrypted:
-              SECURE_ENV1: test_value1
-              SECURE_ENV2: test_value1
           runtime:            
             type: host
         requires:
