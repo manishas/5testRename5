@@ -170,6 +170,10 @@ pipelines:
             - ls
             - ls -R testing2
             - restore_cache myWildcard wildcards
+            - add_run_variable testRunVariable="testing" testingAgain=2 testThree=three
+            - save_run_state testyml.yml myYml
+            - save_run_state *.yml myWildcard
+            - save_run_state testing/test run.env
             
         #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
@@ -210,6 +214,9 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
+            - restore_run_state myYml testyml.yml
+            - restore_run_state myWildcard testing/test
+            - ls -R
           onSuccess:
             - echo "Job well done!"
           onFailure:
