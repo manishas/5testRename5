@@ -175,6 +175,9 @@ pipelines:
         execution:
           onStart:
             - echo "Prepping build environment"
+            - echo "$testRunVariable"
+            - echo "$testingAgain"
+            - echo "$testThree"
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
