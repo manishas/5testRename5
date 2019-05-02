@@ -144,6 +144,7 @@ pipelines:
         requires:
           resources:
             - nodeRepoResource
+            - stateOne
         triggeredBy:
           steps:
             - in_trigger_step
