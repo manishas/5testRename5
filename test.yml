@@ -9,7 +9,7 @@ resources:
     #     pullRequest: false
     #     pullRequestClose: false
          release: true
-         tagPush: true
+    #     tagPush: true
     initialVersion:
       sha: master
 
