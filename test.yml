@@ -1,4 +1,11 @@
 resources:
+  - name: stateOne
+    type: state
+    initialVersion:
+      sha: master
+  - name: stateTwo
+    type: state
+
   - name: gitRepoResource
     type: gitRepo
     repoPath: a-murphy/5testRename5
