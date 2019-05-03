@@ -145,6 +145,8 @@ pipelines:
           resources:
             - nodeRepoResource
             - stateOne
+        outputResources:
+          - stateTwo
         triggeredBy:
           steps:
             - in_trigger_step
