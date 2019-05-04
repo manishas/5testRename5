@@ -208,7 +208,8 @@ pipelines:
           runtime:            
             type: host
         requires:
-      #    resources:
+          resources:
+            - stateTwo
       #      - sample_java_file_test
           integrations:
             - github
