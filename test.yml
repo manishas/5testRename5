@@ -101,9 +101,9 @@ pipelines:
         type: bash
         configuration:
           affinityGroup: test_group 
-        requires:
-          resources:
-            - gitRepoResource
+    #    requires:
+    #      resources:
+    #        - gitRepoResource
         setup:
           runtime:            
             type: host
