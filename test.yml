@@ -187,7 +187,11 @@ pipelines:
             - add_run_variable testRunVariable="testing" testingAgain=2 testThree=three
             - save_run_state testyml.yml myYml
             - save_run_state *.yml myWildcard
-            - save_resource_state stateTwo testyml.yml myYml
+            - echo $RUN_ID > testid.txt
+            - restore_resource_state stateOne test oldtestid.txt
+            - cat oldtestid.txt
+            - save_resource_state stateOne testid.txt test
+            - save_resource_state stateOne testyml.yml myYml
             - save_resource_state stateTwo *.yml myWildcard
             - ls -R $RUN_DIR
             
