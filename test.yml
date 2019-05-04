@@ -189,7 +189,7 @@ pipelines:
             - save_run_state *.yml myWildcard
             - echo $RUN_ID > testid.txt
             - restore_resource_state stateOne test oldtestid.txt
-            - cat oldtestid.txt
+            - cat oldtestid.txt || true
             - save_resource_state stateOne testid.txt test
             - save_resource_state stateOne testyml.yml myYml
             - save_resource_state stateTwo *.yml myWildcard
