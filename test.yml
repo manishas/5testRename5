@@ -187,6 +187,7 @@ pipelines:
             - save_run_state testyml.yml myYml
             - save_run_state *.yml myWildcard
             - echo "testing" > $res_stateTwo_resourcePath/test.txt
+            - ls -R $RUN_DIR
             
         #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
@@ -231,7 +232,7 @@ pipelines:
             - restore_run_state myYml testyml.yml
             - restore_run_state myWildcard testing/test
             - ls -R
-            - ls -R $STEP_DIR
+            - ls -R $RUN_DIR
           onSuccess:
             - echo "Job well done!"
           onFailure:
