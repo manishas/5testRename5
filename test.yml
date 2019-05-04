@@ -99,8 +99,8 @@ pipelines:
     steps:
       - name: in_trigger_step
         type: bash
-        configuration:
-          affinityGroup: test_group 
+  #      configuration:
+  #        affinityGroup: test_group 
     #    requires:
     #      resources:
     #        - gitRepoResource
@@ -135,8 +135,8 @@ pipelines:
 
       - name: main_step
         type: bash
-        configuration:
-          affinityGroup: test_group 
+   #     configuration:
+   #       affinityGroup: test_group 
         setup:
           runtime:            
             type: image
@@ -206,8 +206,8 @@ pipelines:
             - echo "Someone cancelled the job"
       - name: other_step
         type: bash
-        configuration:
-          affinityGroup: test_group 
+     #   configuration:
+     #     affinityGroup: test_group 
         setup:
         #  environmentVariables:
         #    normal:
