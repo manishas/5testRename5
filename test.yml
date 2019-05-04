@@ -233,7 +233,7 @@ pipelines:
             - restore_run_state myYml testyml.yml
             - restore_run_state myWildcard testing/test
             - restore_resource_state stateTwo myYml testyml.yml
-            - restore_resource_state stateTwo myWildcard *.yml
+            - restore_resource_state stateTwo myWildcard testWildcard
             - ls -R
             - ls -R $RUN_DIR
           onSuccess:
