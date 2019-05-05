@@ -155,6 +155,7 @@ pipelines:
           resources:
             - nodeRepoResource
             - stateOne
+            - myImage
         outputResources:
        #   - stateOne
           - stateTwo
