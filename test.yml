@@ -5,6 +5,11 @@ resources:
       sha: master
   - name: stateTwo
     type: state
+  - name: myImage
+    type: image
+    imageName: drydock/u16pytall
+    initialVersion:
+      imageTag: v7.4.1
 
   - name: gitRepoResource
     type: gitRepo
@@ -149,7 +154,7 @@ pipelines:
             - nodeRepoResource
             - stateOne
         outputResources:
-          - stateOne
+       #   - stateOne
           - stateTwo
         triggeredBy:
           steps:
