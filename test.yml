@@ -149,7 +149,7 @@ pipelines:
             - nodeRepoResource
             - stateOne
         outputResources:
-     #     - stateOne
+          - stateOne
           - stateTwo
         triggeredBy:
           steps:
