@@ -8,6 +8,8 @@ resources:
   - name: myImage
     type: image
     imageName: drydock/u16pytall
+    configuration:
+      integrationName: github
     initialVersion:
       imageTag: v7.4.1
 
