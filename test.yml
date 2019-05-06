@@ -171,6 +171,8 @@ pipelines:
             - nodeRepoResource
             - stateOne
             - myImage
+          integrations:
+            - test
         outputResources:
        #   - stateOne
           - stateTwo
