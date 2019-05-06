@@ -19,7 +19,7 @@ resources:
       integrationName: github
     initialVersion:
       imageTag: v7.4.1
-      test: test
+      test: test2
 
   - name: gitRepoResource
     type: gitRepo
