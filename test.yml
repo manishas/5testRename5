@@ -21,7 +21,7 @@ resources:
       buildOn:
     #     commit: false
     #     pullRequest: false
-    #     pullRequestClose: false
+         pullRequestClose: false
          release: true
          tagPush: true
     initialVersion:
