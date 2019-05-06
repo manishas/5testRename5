@@ -5,6 +5,13 @@ resources:
       sha: master
   - name: stateTwo
     type: state
+  - name: stateThree
+    type: state
+    repoPath: path
+    fileLocation: location
+    imageName: name
+    initialVersion:
+      sha: master
   - name: myImage
     type: image
     imageName: drydock/u16pytall
