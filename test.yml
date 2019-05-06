@@ -1,6 +1,8 @@
 resources:
   - name: stateOne
     type: state
+    configuration:
+      affinityGroup: test
     initialVersion:
       sha: master
   - name: stateTwo
