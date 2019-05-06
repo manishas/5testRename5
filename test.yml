@@ -7,11 +7,11 @@ resources:
     type: state
   - name: stateThree
     type: state
-    repoPath: path
-    fileLocation: location
-    imageName: name
+    repoPath: notpath
+    fileLocation: notlocation
+    imageName: notname
     initialVersion:
-      sha: master
+      sha: notmaster
   - name: myImage
     type: image
     imageName: drydock/u16pytall
