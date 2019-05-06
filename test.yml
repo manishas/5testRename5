@@ -12,6 +12,14 @@ resources:
       integrationName: github
     initialVersion:
       imageTag: v7.4.1
+  - name: imageTwo
+    type: image
+    imageName: drydock/u16pytall
+    configuration:
+      integrationName: github
+    initialVersion:
+      imageTag: v7.4.1
+      test: test
 
   - name: gitRepoResource
     type: gitRepo
