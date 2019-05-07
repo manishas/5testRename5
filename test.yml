@@ -174,11 +174,13 @@ pipelines:
           integrations:
             - test
         outputResources:
-       #   - stateOne
+          - stateOne
           - stateTwo
         triggeredBy:
           steps:
             - in_trigger_step
+          resources:
+            - stateOne
         execution:
           onStart:
             - echo "Prepping build environment"
