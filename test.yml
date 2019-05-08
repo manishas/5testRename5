@@ -225,7 +225,7 @@ pipelines:
         requires:
           resources:
             - nodeRepoResource
-            - bitbucketServerRepoResource
+            - gheRepoResource
          #   - bitbucketRepoResource2
          #   - stateOne
          #   - myImage
@@ -246,9 +246,9 @@ pipelines:
             - echo "executing task command 1"
             - echo "executing task command 2"
             - compare_git --resource nodeRepoResource
-            - ls "$(cat $STEP_JSON_PATH | jq -r .'resources.bitbucketServerRepoResource.resourcePath')"
-            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.bitbucketServerRepoResource.resourcePath')"
-            - cat shippable.yml
+            - ls "$(cat $STEP_JSON_PATH | jq -r .'resources.gheRepoResource.resourcePath')"
+            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.gheRepoResource.resourcePath')"
+            - cat test.txt
             - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath')"
             - switch_env nodejs 0.12
             - npm install
