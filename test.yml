@@ -249,6 +249,7 @@ pipelines:
             - ls "$(cat $STEP_JSON_PATH | jq -r .'resources.gheRepoResource.resourcePath')"
             - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.gheRepoResource.resourcePath')"
             - cat test.txt
+            - cat test.yml
             - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath')"
             - switch_env nodejs 0.12
             - npm install
