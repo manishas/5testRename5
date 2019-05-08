@@ -55,6 +55,20 @@ resources:
          tagPush: true
     initialVersion:
       sha: master
+      
+  - name: gheRepoResource
+    type: gitRepo
+    repoPath: a-murphy/5testRename5
+    configuration:
+      integrationName: githubEnterprise
+      buildOn:
+    #     commit: false
+         pullRequest: true
+         pullRequestClose: false
+         release: true
+         tagPush: true
+    initialVersion:
+      sha: master
 
   - name: gitRepoResource
     type: gitRepo
