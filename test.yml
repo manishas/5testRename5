@@ -232,6 +232,8 @@ pipelines:
             - echo "executing task command 2"
             - compare_git --resource nodeRepoResource
             - ls "$(cat $STEP_JSON_PATH | jq -r .'resources.bitbucketRepoResource.resourcePath')"
+            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.bitbucketRepoResource.resourcePath')"
+            - cat test.txt
             - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath')"
             - switch_env nodejs 0.12
             - npm install
