@@ -225,7 +225,7 @@ pipelines:
         requires:
           resources:
             - nodeRepoResource
-            - gheRepoResource
+            - bitbucketRepoResource
          #   - bitbucketRepoResource2
          #   - stateOne
          #   - myImage
