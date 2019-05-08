@@ -42,6 +42,20 @@ resources:
     initialVersion:
       sha: master
       
+  - name: bitbucketRepoResource2
+    type: gitRepo
+    repoPath: a-murphy/sample_pipelines
+    configuration:
+      integrationName: bitbucket
+      buildOn:
+    #     commit: false
+         pullRequest: true
+         pullRequestClose: true
+         release: true
+         tagPush: true
+    initialVersion:
+      sha: master
+      
   - name: bitbucketServerRepoResource
     type: gitRepo
     repoPath: ~aidan/test
@@ -212,6 +226,7 @@ pipelines:
           resources:
             - nodeRepoResource
             - bitbucketRepoResource
+            - bitbucketRepoResource2
          #   - stateOne
          #   - myImage
           integrations:
