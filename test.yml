@@ -27,6 +27,34 @@ resources:
     initialVersion:
       imageTag: v7.4.1
       test: test2
+      
+  - name: bitbucketRepoResource
+    type: gitRepo
+    repoPath: a-murphy/sample_pipelines3_rename
+    configuration:
+      integrationName: bitbucket
+      buildOn:
+    #     commit: false
+         pullRequest: true
+         pullRequestClose: true
+         release: true
+         tagPush: true
+    initialVersion:
+      sha: master
+      
+  - name: bitbucketServerRepoResource
+    type: gitRepo
+    repoPath: ~aidan/test
+    configuration:
+      integrationName: bitbucketServer
+      buildOn:
+    #     commit: false
+         pullRequest: true
+         pullRequestClose: false
+         release: true
+         tagPush: true
+    initialVersion:
+      sha: master
 
   - name: gitRepoResource
     type: gitRepo
