@@ -246,8 +246,8 @@ pipelines:
             - echo "executing task command 1"
             - echo "executing task command 2"
             - compare_git --resource nodeRepoResource
-            - ls "$(cat $STEP_JSON_PATH | jq -r .'resources.gheRepoResource.resourcePath')"
-            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.gheRepoResource.resourcePath')"
+            - ls "$(cat $STEP_JSON_PATH | jq -r .'resources.bitbucketServerRepoResource.resourcePath')"
+            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.bitbucketServerRepoResource.resourcePath')"
             - cat test.txt
             - cat test.yml
             - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath')"
