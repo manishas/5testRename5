@@ -35,7 +35,7 @@ resources:
       integrationName: bitbucket
       buildOn:
     #     commit: false
-         pullRequest: true
+    #     pullRequest: true
          pullRequestClose: true
          release: true
          tagPush: true
