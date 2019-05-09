@@ -12,6 +12,7 @@ resources:
     imageName: name
     initialVersion:
       sha: master
+ 
   - name: myImage
     type: image
     imageName: drydock/u16pytall
