@@ -294,7 +294,7 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
-      - name: other_step
+      - name: other-step
         type: bash
      #   configuration:
      #     affinityGroup: test_group 
