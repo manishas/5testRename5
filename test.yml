@@ -22,7 +22,7 @@ resources:
     #     commit: false
          pullRequest: true
          pullRequestClose: false
-         release: true
+    #     release: true
          tagPush: true
     initialVersion:
       sha: master
