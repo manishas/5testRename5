@@ -13,7 +13,7 @@ resources:
     initialVersion:
       sha: master
       
-  - name: bitbucketRepoResource2
+  - name: bitbucketRepoResource3
     type: gitRepo
     repoPath: a-murphy/sample_pipelines3_rename
     configuration:
@@ -142,7 +142,7 @@ pipelines:
         requires:
           resources:
          #   - gitRepoResource
-            - bitbucketRepoResource2
+            - bitbucketRepoResource3
         triggeredBy:
           steps:
             - in_trigger_step
@@ -153,9 +153,9 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - update_commit_status bitbucketRepoResource2 --status processing --message "my message"
-            - update_commit_status bitbucketRepoResource2 --status failure --context "failing-context"
-            - update_commit_status bitbucketRepoResource2 --status success --message "my message" --context "succcess-context"
+            - update_commit_status bitbucketRepoResource3 --status processing --message "my message"
+            - update_commit_status bitbucketRepoResource3 --status failure --context "failing-context"
+            - update_commit_status bitbucketRepoResource3 --status success --message "my message" --context "succcess-context"
           #  - update_commit_status gitRepoResource --status testing
           #  - update_commit_status bitbucketRepoResource
             - compare_git --resource gitRepoResource
@@ -168,7 +168,7 @@ pipelines:
             - echo "Job well done!"
           onFailure:
             - echo "uh oh, something went wrong"
-            - update_commit_status bitbucketRepoResource2 --status failure
+            - update_commit_status bitbucketRepoResource3 --status failure
           onComplete: #always
             - echo "Cleaning up some stuff"
           onCancel:
