@@ -13,11 +13,11 @@ resources:
     initialVersion:
       sha: master
       
-  - name: githubEnterpriseRepoResource
+  - name: bitbucketRepoResource
     type: gitRepo
-    repoPath: a-murphy/5testRename5
+    repoPath: a-murphy/sample_pipelines3_rename
     configuration:
-      integrationName: github2
+      integrationName: bitbucket
       buildOn:
     #     commit: false
          pullRequest: true
@@ -144,7 +144,7 @@ pipelines:
         requires:
           resources:
             - gitRepoResource
-            - githubEnterpriseRepoResource
+            - bitbucketRepoResource
         triggeredBy:
           steps:
             - in_trigger_step
@@ -155,12 +155,11 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - update_commit_status gitRepoResource --status processing --message "my message"
-            - update_commit_status gitRepoResource --status failure --context "failing-context"
-            - update_commit_status gitRepoResource --status success --message "my message" --context "succcess-context"
-            - update_commit_status githubEnterpriseRepoResource --status success --context "enterprise"
+            - update_commit_status bitbucketRepoResource --status processing --message "my message"
+            - update_commit_status bitbucketRepoResource --status failure --context "failing-context"
+            - update_commit_status bitbucketRepoResource --status success --message "my message" --context "succcess-context"
           #  - update_commit_status gitRepoResource --status testing
-            - update_commit_status gitRepoResource
+          #  - update_commit_status bitbucketRepoResource
             - compare_git --resource gitRepoResource
             - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource
             - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
