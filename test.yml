@@ -171,6 +171,7 @@ pipelines:
           onSuccess:
             - echo "Job well done!"
             - echo $CURRENT_SCRIPT_SECTION
+            - compare_git --resource gitRepoResource
             - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
           onFailure:
             - echo $CURRENT_SCRIPT_SECTION
