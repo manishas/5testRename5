@@ -157,14 +157,14 @@ pipelines:
             - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - update_commit_status bitbucketServerRepoResource --status processing --message "my message"
-            - update_commit_status bitbucketServerRepoResource --status failure --context "failing-context"
-            - update_commit_status bitbucketServerRepoResource --status success --message "my message" --context "succcess-context"
+        #    - update_commit_status bitbucketServerRepoResource --status processing --message "my message"
+        #    - update_commit_status bitbucketServerRepoResource --status failure --context "failing-context"
+        #    - update_commit_status bitbucketServerRepoResource --status success --message "my message" --context "succcess-context"
           #  - update_commit_status gitRepoResource --status testing
-            - update_commit_status gitRepoResource2
-            - compare_git --resource gitRepoResource
-            - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource
-            - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
+        #    - update_commit_status gitRepoResource2
+        #    - compare_git --resource gitRepoResource
+        #    - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource
+        #    - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
 
             - add_run_variable testRunVariable="testing" testingAgain=2 testThree=three
           #  - switch_env c --jdk openjdk11 4
