@@ -12,6 +12,20 @@ resources:
          tagPush: true
     initialVersion:
       sha: master
+      
+  - name: githubEnterpriseRepoResource
+    type: gitRepo
+    repoPath: a-murphy/5testRename5
+    configuration:
+      integrationName: github2
+      buildOn:
+    #     commit: false
+         pullRequest: true
+         pullRequestClose: false
+         release: true
+         tagPush: true
+    initialVersion:
+      sha: master
 
   - name: gitRepoResource2
     type: gitRepo
@@ -130,6 +144,7 @@ pipelines:
         requires:
           resources:
             - gitRepoResource
+            - githubEnterpriseRepoResource
         triggeredBy:
           steps:
             - in_trigger_step
@@ -142,11 +157,11 @@ pipelines:
             - echo "executing task command 2"
             - update_commit_status gitRepoResource --status processing --message "my message"
             - update_commit_status gitRepoResource --status failure --context "failing-context"
-          #  - update_commit_status gitRepoResource --status success
+            - update_commit_status githubEnterpriseRepoResource --status success
           #  - update_commit_status gitRepoResource --status testing
             - update_commit_status gitRepoResource
             - compare_git --resource gitRepoResource
-            - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
+            - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource
             - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
 
             - add_run_variable testRunVariable="testing" testingAgain=2 testThree=three
