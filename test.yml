@@ -136,9 +136,15 @@ pipelines:
         execution:
           onStart:
             - echo "Prepping build environment"
+            - update_commit_status gitRepoResource --status processing
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
+            - update_commit_status gitRepoResource --status processing --message "my message"
+            - update_commit_status gitRepoResource --status failure --context "failing-context"
+            - update_commit_status gitRepoResource --status success
+            - update_commit_status gitRepoResource --status testing
+            - update_commit_status gitRepoResource
             - compare_git --resource gitRepoResource
             - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
             - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
