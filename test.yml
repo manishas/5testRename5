@@ -142,8 +142,8 @@ pipelines:
             - echo "executing task command 2"
             - update_commit_status gitRepoResource --status processing --message "my message"
             - update_commit_status gitRepoResource --status failure --context "failing-context"
-            - update_commit_status gitRepoResource --status success
-            - update_commit_status gitRepoResource --status testing
+          #  - update_commit_status gitRepoResource --status success
+          #  - update_commit_status gitRepoResource --status testing
             - update_commit_status gitRepoResource
             - compare_git --resource gitRepoResource
             - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
