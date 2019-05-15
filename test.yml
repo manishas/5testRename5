@@ -149,10 +149,12 @@ pipelines:
         execution:
           onStart:
             - echo $CURRENT_SCRIPT_SECTION
+            - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
             - echo "Prepping build environment"
          #   - update_commit_status gitRepoResource --status processing
           onExecute:
             - echo $CURRENT_SCRIPT_SECTION
+            - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
             - echo "executing task command 1"
             - echo "executing task command 2"
             - update_commit_status bitbucketServerRepoResource --status processing --message "my message"
@@ -169,15 +171,19 @@ pipelines:
           onSuccess:
             - echo "Job well done!"
             - echo $CURRENT_SCRIPT_SECTION
+            - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
           onFailure:
             - echo $CURRENT_SCRIPT_SECTION
+            - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
             - echo "uh oh, something went wrong"
             - update_commit_status bitbucketServerRepoResource --status failure
           onComplete: #always
             - echo $CURRENT_SCRIPT_SECTION
+            - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
             - echo "Cleaning up some stuff"
           onCancel:
             - echo $CURRENT_SCRIPT_SECTION
+            - update_commit_status bitbucketServerRepoResource --message "$CURRENT_SCRIPT_SECTION" --context "$CURRENT_SCRIPT_SECTION"
             - echo "Someone cancelled the job"
         outputResources:
           - gitRepoResource2
