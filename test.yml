@@ -5,7 +5,7 @@ resources:
     configuration:
       integrationName: github
       buildOn:
-    #     commit: false
+         commit: false
          pullRequest: true
          pullRequestClose: false
          release: true
@@ -151,13 +151,14 @@ pipelines:
         execution:
           onStart:
             - echo "Prepping build environment"
-            - update_commit_status gitRepoResource --status processing
+         #   - update_commit_status gitRepoResource --status processing
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
             - update_commit_status gitRepoResource --status processing --message "my message"
             - update_commit_status gitRepoResource --status failure --context "failing-context"
-            - update_commit_status githubEnterpriseRepoResource --status success
+            - update_commit_status gitRepoResource --status success --message "my message" --context "succcess-context"
+            - update_commit_status githubEnterpriseRepoResource --status success --context "enterprise"
           #  - update_commit_status gitRepoResource --status testing
             - update_commit_status gitRepoResource
             - compare_git --resource gitRepoResource
@@ -170,6 +171,7 @@ pipelines:
             - echo "Job well done!"
           onFailure:
             - echo "uh oh, something went wrong"
+            - update_commit_status gitRepoResource --status failure
           onComplete: #always
             - echo "Cleaning up some stuff"
           onCancel:
