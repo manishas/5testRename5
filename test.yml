@@ -13,11 +13,11 @@ resources:
     initialVersion:
       sha: master
       
-  - name: bitbucketRepoResource5
+  - name: bitbucketServerRepoResource
     type: gitRepo
     repoPath: a-murphy/sample_pipelines3_rename
     configuration:
-      integrationName: bitbucket
+      integrationName: bitbucketServer
       buildOn:
     #     commit: false
          pullRequest: true
@@ -142,7 +142,7 @@ pipelines:
         requires:
           resources:
          #   - gitRepoResource
-            - bitbucketRepoResource5
+            - bitbucketServerRepoResource
         triggeredBy:
           steps:
             - in_trigger_step
@@ -153,9 +153,9 @@ pipelines:
           onExecute:
             - echo "executing task command 1"
             - echo "executing task command 2"
-            - update_commit_status bitbucketRepoResource5 --status processing --message "my message"
-            - update_commit_status bitbucketRepoResource5 --status failure --context "failing-context"
-            - update_commit_status bitbucketRepoResource5 --status success --message "my message" --context "succcess-context"
+            - update_commit_status bitbucketServerRepoResource --status processing --message "my message"
+            - update_commit_status bitbucketServerRepoResource --status failure --context "failing-context"
+            - update_commit_status bitbucketServerRepoResource --status success --message "my message" --context "succcess-context"
           #  - update_commit_status gitRepoResource --status testing
           #  - update_commit_status bitbucketRepoResource
             - compare_git --resource gitRepoResource
@@ -168,7 +168,7 @@ pipelines:
             - echo "Job well done!"
           onFailure:
             - echo "uh oh, something went wrong"
-            - update_commit_status bitbucketRepoResource5 --status failure
+            - update_commit_status bitbucketServerRepoResource --status failure
           onComplete: #always
             - echo "Cleaning up some stuff"
           onCancel:
