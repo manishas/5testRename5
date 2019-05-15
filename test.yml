@@ -63,8 +63,6 @@ resources:
 #    initialVersion:
 #      targetIPs:
    #     - 1
-   #     - test:
-   #         test: test
 #        - 1.2.3.5
 #        - test2
 #  - name: sample_java_file_test
