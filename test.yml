@@ -15,7 +15,7 @@ resources:
       
   - name: bitbucketServerRepoResource
     type: gitRepo
-    repoPath: a-murphy/sample_pipelines3_rename
+    repoPath: ~aidan/test
     configuration:
       integrationName: bitbucketServer
       buildOn:
