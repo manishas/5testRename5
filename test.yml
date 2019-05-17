@@ -136,10 +136,9 @@ pipelines:
           runtime:            
             type: image
             image:
-              auto:
-                language: nodejs
-                versions:
-                  - 8.15.0 
+              custom: 
+                name: drydock/u16javall
+                tag:  v7.1.4
         requires:
           resources:
          #   - gitRepoResource
