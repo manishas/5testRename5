@@ -28,7 +28,7 @@ pipelines:
                 name: drydock/u16nodall
                 tag:  v7.1.4
         triggeredBy:
-          steps:
+          resources:
             - nodeRepoResource
         execution:
           onStart:
