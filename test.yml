@@ -1,212 +1,52 @@
 resources:
-  - name: gitRepoResource
-    type: gitRepo
-    repoPath: a-murphy/5testRename5
-    configuration:
-      integrationName: github
-      buildOn:
-    #     commit: false
-    #     pullRequest: false
-    #     pullRequestClose: false
-         release: true
-    #     tagPush: true
-    initialVersion:
-      sha: master
 
-  - name: gitRepoResource2
+  - name: nodeRepoResource
     type: gitRepo
-    repoPath: a-murphy/5testRename5
+    repoPath: manishas/basic-node
     configuration:
-      integrationName: github
+      integrationName: manishas_github
       buildOn:
-         commit: false
-         pullRequest: false
+         commit: true
+         pullRequest: true
          pullRequestClose: false
-         release: false
-         tagPush: false
-      tags:
-        only: tag1|tag2
-      branches:
-        only: master|test
+         release: true
+         tagPush: true
     initialVersion:
       sha: master
 
-#  - name: fileIntegrationResource
-#    type: file
-#    fileLocation: location
-#    configuration:
-#      files:
-#        except:      file
-#        only:        file       
-#      integrationName: fileServerIntegration 
-#    initialVersion:
-#      fileName: file
-#      fileDtTm: test6
-#  - name: cluster
-#    type: cluster
-#    configuration:
-#      integrationName: sshKey 
-#    initialVersion:
-#      targetIPs:
-   #     - 1
-   #     - test:
-   #         test: test
-#        - 1.2.3.5
-#        - test2
-#  - name: sample_java_file_test
-#    type: file
-#    fileLocation: text.js
-#    configuration:
-#      integrationName: fileServerIntegration
-#    initialVersion:
-#      fileName: test4
-#  - name: file_test
-#    type: file
-#    fileLocation: text.js
-#    configuration:
-#      integrationName: fileServerIntegration
-       
+
 pipelines:
   - name: test_pipeline_1
-    setup:
-      environmentVariables:
-    #    readOnly:
-    #      ENV1: value-pipe-1
-    #      ENV2: value-pipe-2
-      runtime:            
-        type: host
     steps:
-      - name: in_trigger_step
-        type: bash
-        configuration:
-          affinityGroup: test_group 
-        setup:
-          runtime:            
-            type: host
-            image:
-              language: java
-              versions: v1.1
-            custom: 
-              name: drydock/u16javall
-              tag:  v7.1.4
-          #    options: test
-        execution:
-          onExecute:
-            - bump_semver v1.2.3 minor
-            - echo "executing task command 1"
-            - echo "executing task command 2"
-            - openssl genrsa -out key.pem 1024 
-            - openssl rsa -in key.pem -text -noout 
-            - openssl rsa -in key.pem -pubout -out pub.pem 
-            - openssl rsa -in pub.pem -pubin -text -noout 
-            - echo "testing encryption" > testfile.txt
-            - encrypt_file --output testencrypted.txt testfile.txt --key pub.pem
-            - cat testencrypted.txt
-            - decrypt_file testencrypted.txt --output testunencrypted.txt --key key.pem
-            - cat testunencrypted.txt
-            - encrypt_string "encryptme" --key pub.pem
-            - encryptedstring=$(encrypt_string "encryptme" --key pub.pem)
-            - echo "$encryptedstring"
-            - decrypt_string "$encryptedstring" --key key.pem
-
       - name: main_step
         type: bash
-        configuration:
-          affinityGroup: test_group 
         setup:
-        #  environmentVariables:
-        #    normal:
-        #      ENV1: value1
-          #    ENV2: value2
-          #  encrypted:
-          #    SECURE_ENV1: test_value
-          #    SECURE_ENV2: test_value
-          runtime:            
+          runtime:
             type: image
             image:
-              custom: 
-                name: drydock/u16javall
+              custom:
+                name: drydock/u16nodall
                 tag:  v7.1.4
-        requires:
-          integrations:
-            - github
-            - jira
-            - airbrake
-            - newRelic
-            - slack
-            - webhook
-          resources:
-            - gitRepoResource
         triggeredBy:
           steps:
-            - in_trigger_step
+            - nodeRepoResource
         execution:
           onStart:
             - echo "Prepping build environment"
           onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
-            - compare_git --resource gitRepoResource
-            - compare_git --commit-range d4c493389cd54b2ad795f94e91d445fece8cba2f..master --path $STEP_DEPENDENCY_STATE_DIR/resources/gitRepoResource/gitRepo
-         #   - replicate_resource gitRepoResource gitRepoResource2 --match-settings
-         #   - replicate_resource gitRepoResource gitRepoResource2
-         #   - send_notification jira --project-id test --type test --summary "testing" --description "testing description"
-         #   - send_notification airbrake --type deploy --project-id project
-         #   - send_notification newRelic --appName test --type test --revision revised
-            #- send_notification slack --text "This is a test."
-            - send_notification webhook
-            - write_output gitRepoResource2 key1=value1 key2="value2" key3="value 3" "key4=value4" key5= key6="" key7=value7=7 key8
-          #  - switch_env ruby jruby-9.2.3.0
-         #   - switch_env ruby 2.6.0
-         #   - switch_env ruby ruby-head
-         #   - switch_env ruby jruby-head --jdk openjdk11 --bundler 1.18.0
-         #   - switch_env php 7.3.1
-         #   - switch_env php 5.6.30
-          #  - switch_env scala
-          #  - switch_env clojure
-            - switch_env python 3.7 3.7
-            - switch_env c --jdk openjdk11
-          #  - switch_env c --jdk openjdk11 4
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
-          onCancel:
-            - echo "Someone cancelled the job"
-        outputResources:
-          - gitRepoResource2
-      - name: other_step
-        type: bash
-        configuration:
-          affinityGroup: test_group 
-        setup:
-          environmentVariables:
-            normal:
-              ENV1: value11
-              ENV2: value21
-            encrypted:
-              SECURE_ENV1: test_value1
-              SECURE_ENV2: test_value1
-          runtime:            
-            type: host
-        requires:
-      #    resources:
-      #      - sample_java_file_test
-          integrations:
-            - github
-        triggeredBy:
-      #    resources:
-      #      - sample_java_file_test
-          steps:
-            - main_step
-        execution:
-          onStart:
-            - echo "Prepping build environment"
-          onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
+            - compare_git --resource nodeRepoResource
+            - cd "$(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath')"
+            - switch_env nodejs 0.12
+            - npm install
+            - cd tests
+            - ../node_modules/.bin/mocha --recursive "**/*.spec.js" -R mocha-junit-reporter --reporter-options mochaFile=../testresults.xml
+            - ../node_modules/.bin/istanbul --include-all-sources cover -root "../routes" ../node_modules/mocha/bin/_mocha -- -R spec-xunit-file --recursive "**/*.spec.js"
+            - ../node_modules/.bin/istanbul report cobertura --dir ../coverageReport
+            - cd .. && ls
+            - save_tests testresults.xml
+            - cache_files shippable.yml myYml
+            - ls -R $RUN_DIR
+        #    - save_tests $(cat $STEP_JSON_PATH | jq -r .'resources.nodeRepoResource.resourcePath') #testresults.xml
           onSuccess:
             - echo "Job well done!"
           onFailure:
