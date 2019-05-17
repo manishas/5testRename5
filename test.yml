@@ -139,8 +139,8 @@ pipelines:
               custom: 
                 name: drydock/u16javall
                 tag:  v7.1.4
-        requires:
-          resources:
+        #requires:
+         # resources:
          #   - gitRepoResource
          #   - bitbucketServerRepoResource
         triggeredBy:
