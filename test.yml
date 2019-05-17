@@ -139,7 +139,7 @@ pipelines:
               auto:
                 language: nodejs
                 versions:
-                  - 8.16.0 
+                  - 8.15.0 
         requires:
           resources:
          #   - gitRepoResource
